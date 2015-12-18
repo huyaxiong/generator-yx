@@ -1,0 +1,17 @@
+{
+  "name": "client",
+  "authors": [
+    "hugh.hu <hugh.hu@fredfarid.com>"
+  ],
+  "description": "",
+  "main": "",
+  "moduleType": [],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "bower_components"
+  ],
+  "dependencies": {
+    "foundation": "~5.5.3"
+  }
+}

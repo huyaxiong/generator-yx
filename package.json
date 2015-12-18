@@ -1,0 +1,26 @@
+{
+  "name": "pivot",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/fredfarid/ff-sh-pivot.git"
+  },
+  "author": "Hugh",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/fredfarid/ff-sh-pivot#readme",
+  "dependencies": {
+    "bower": "^1.7.1",
+    "browser-sync": "^2.10.1",
+    "express": "^4.13.3",
+    "gulp": "^3.9.0",
+    "tingodb": "^0.4.2"
+  },
+  "devDependencies": {
+    "body-parser": "^1.14.2"
+  }
+}
