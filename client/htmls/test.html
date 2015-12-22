@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <title>Pivot Test</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../bower_components/foundation/css/normalize.min.css">
-    <link rel="stylesheet" href="../bower_components/foundation/css/foundation.min.css">
+    <link rel="stylesheet" href="../stylesheets/test.css">
     <!--<link rel="stylesheet" href="../stylesheets/test.css">-->
 </head>
 <body>
 
+<h1>Questionnaire</h1>
+
 <div class="row">
-    Question 1:A,B,C or D?
-</div>
-<div class="row">
-    <div class="large-12 columns">
+    <h3>Question 1:A,B,C or D?</h3>
+
+    <div>
         <input type="radio" name="pokemon" value="A"><label>A</label>
         <input type="radio" name="pokemon" value="B"><label>B</label>
         <input type="radio" name="pokemon" value="C"><label>C</label>
@@ -24,10 +24,9 @@
 
 
 <div class="row">
-    Question 2:A,B,C or D?
-</div>
-<div class="row">
-    <div class="small-12 medium-12 large-12 columns">
+    <h3>Question 1:A,B,C or D?</h3>
+
+    <div>
         <input type="radio" name="pokemon" value="A"><label>A</label>
         <input type="radio" name="pokemon" value="B"><label>B</label>
         <input type="radio" name="pokemon" value="C"><label>C</label>
@@ -35,11 +34,11 @@
     </div>
 </div>
 
+
 <div class="row">
-    Question 3:A,B,C or D?
-</div>
-<div class="row">
-    <div class="small-12 medium-12 large-12 columns">
+    <h3>Question 1:A,B,C or D?</h3>
+
+    <div>
         <input type="radio" name="pokemon" value="A"><label>A</label>
         <input type="radio" name="pokemon" value="B"><label>B</label>
         <input type="radio" name="pokemon" value="C"><label>C</label>
@@ -47,16 +46,24 @@
     </div>
 </div>
 
+
 <div class="row">
-    <div class="small-5 medium-5 large-5 columns">
-        <label>Mobile:</label>
-        <input id="mobile-num" type="text" maxlength="40">
-    </div>
-    <div class="small-7 medium-7 large-7 columns">
-        <a href="#" class="tiny button left" onclick="submit()">Submit</a>
+    <h3>Question 1:A,B,C or D?</h3>
+
+    <div>
+        <input type="radio" name="pokemon" value="A"><label>A</label>
+        <input type="radio" name="pokemon" value="B"><label>B</label>
+        <input type="radio" name="pokemon" value="C"><label>C</label>
+        <input type="radio" name="pokemon" value="D"><label>B</label>
     </div>
 </div>
 
+
+<div id="submit-container">
+    <label for="mobile">Mobile:</label>
+    <input id="mobile" type="text" maxlength="11">
+    <a href="#" class="tiny button" onclick="submit()">Submit</a>
+</div>
 
 <script src="../bower_components/foundation/js/vendor/jquery.js"></script>
 <script src="../bower_components/foundation/js/foundation.min.js"></script>

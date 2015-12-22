@@ -1,0 +1,62 @@
+@import "normalize";
+@import "settings";
+@import "compass/css3";
+@import "foundation/components/type";
+@import "foundation/components/visibility";
+@import "foundation/components/buttons";
+@import "foundation/components/forms";
+@import "susy";
+
+body {
+}
+
+$susy: (
+        global-box-sizing: border-box,
+        gutters: 0,
+        columns: 8,
+        output:isolate,
+        container:$large-breakpoint,
+        use-custom: (
+                background-options: true,
+                breakpoint:false
+        )
+);
+
+@include border-box-sizing;
+
+h1 {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.row {
+  @include container;
+
+  h3 {
+    @include span(6 at 2 break);
+  }
+
+  div {
+    @include span(6 at 2 break);
+  }
+}
+
+#submit-container {
+  @include container;
+  postion: relative;
+  @include span(4 at 3 break);
+
+  label {
+    display: inline-block;
+  }
+
+  input {
+    width: 120px;
+    display: inline-block;
+  }
+
+  a {
+    display: inline-block;
+  }
+}
+
