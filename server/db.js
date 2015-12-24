@@ -28,6 +28,10 @@ module.exports = function () {
         };
         User.create(user).then(function (err, user) {
 
+            User.find().distinct('name').exec(function(err, count){
+                console.log(count.toJSON());
+                console.log(err);
+            });
         })
     }
 };
