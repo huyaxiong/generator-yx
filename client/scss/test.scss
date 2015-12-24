@@ -1,11 +1,11 @@
-@import "normalize";
 @import "settings";
 @import "compass/css3";
-@import "foundation/components/type";
-@import "foundation/components/visibility";
-@import "foundation/components/buttons";
-@import "foundation/components/forms";
+@import 'foundation';
+@include foundation-typography;
+@include foundation-button;
+@include foundation-forms;
 @import "susy";
+
 
 body {
 }
