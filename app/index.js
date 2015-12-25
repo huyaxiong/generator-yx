@@ -8,6 +8,10 @@ module.exports = generators.Base.extend({
     },
 
     install: function () {
-        this.npmInstall(['gulp', 'bower', 'browser-sync'], {'saveDev': true});
+
+        //this.npmInstall(['gulp', 'bower', 'browser-sync'], {'saveDev': true}, function(){
+        //    generators.Base.destinationRoot('client');
+        //});
+        this.spawnCommand('npm', ['install'], {'saveDev': true});
     }
 });
