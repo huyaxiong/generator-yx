@@ -1,7 +1,7 @@
 {
   "name": "generator-yx",
   "version": "1.0.0",
-  "description": "",
+  "description": "foundation+compass+susy+node+mongoose+socket.io+gulp",
   "main": "server/main.js",
   "dependencies": {
     "body-parser": "^1.14.2",
