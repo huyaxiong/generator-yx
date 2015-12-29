@@ -12,6 +12,10 @@
     "bower_components"
   ],
   "dependencies": {
-    "foundation-sites": "~6.1.1"
+    "foundation-sites": "~6.1.1",
+    "PreloadJS": "~0.6.2",
+    "EaselJS": "~0.8.2",
+    "SoundJS": "~0.6.2",
+    "TweenJS": "~0.6.2"
   }
 }
