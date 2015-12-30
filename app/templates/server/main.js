@@ -1,19 +1,19 @@
-var express = require('express');
-var bodyParser = require('body-parser');
-var path = require('path');
-var app = express();
+var express = require('express'),
+    bodyParser = require('body-parser'),
+    path = require('path'),
+    app = express(),
+    config = require('config');
+
 require('db.js')();
 
 app.use(bodyParser());
 
-app.set('port', process.env.PORT || 3000);
+app.set('port', process.env.PORT || config.port);
 
 app.use(express.static(path.resolve(__dirname, '..', 'client')));
 
-
 app.listen(app.get('port'), function () {
-    console.log('Express started on http://localhost:' +
-        app.get('port') + '; press Ctrl-C to terminate.');
+    console.log('Express started on http://localhost:' + app.get('port'));
 });
 
 app.post('/test', function (req, res) {
@@ -37,16 +37,13 @@ app.use(function (err, req, res, next) {
 });
 
 
-
-
-
 var server = require('http').Server(app);
 var io = require('socket.io')(server);
 
 server.listen(3002);
 
 io.on('connection', function (socket) {
-    socket.emit('news', { hello: 'world' });
+    socket.emit('news', {hello: 'world'});
     socket.on('my other event', function (data) {
         console.log(data);
     });
