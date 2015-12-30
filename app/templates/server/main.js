@@ -4,7 +4,9 @@ var express = require('express'),
     app = express(),
     config = require('config');
 
-require('db.js')();
+require('db')();
+
+require('socket')();
 
 app.use(bodyParser());
 
@@ -36,17 +38,5 @@ app.use(function (err, req, res, next) {
     res.send('500 - Server Error');
 });
 
-
-var server = require('http').Server(app);
-var io = require('socket.io')(server);
-
-server.listen(3002);
-
-io.on('connection', function (socket) {
-    socket.emit('news', {hello: 'world'});
-    socket.on('my other event', function (data) {
-        console.log(data);
-    });
-});
 
 
