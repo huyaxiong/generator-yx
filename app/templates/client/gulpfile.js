@@ -1,7 +1,6 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var sourcemaps = require('gulp-sourcemaps');
-var ngAnnotate = require('gulp-ng-annotate');
 var uglify = require('gulp-uglify');
 var sass = require('gulp-ruby-sass');
 var browserSync = require('browser-sync').create();

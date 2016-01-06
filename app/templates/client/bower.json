@@ -1,5 +1,5 @@
 {
-  "name": "client",
+  "name": "yx",
   "authors": [
     "hugh.hu <hugh.hu@fredfarid.com>"
   ],
@@ -8,15 +8,14 @@
   "moduleType": [],
   "license": "MIT",
   "homepage": "",
-  "ignore": [
-    "bower_components"
-  ],
+  "ignore": [],
   "dependencies": {
     "foundation-sites": "~6.1.1",
     "PreloadJS": "~0.6.2",
     "EaselJS": "~0.8.2",
     "SoundJS": "~0.6.2",
     "TweenJS": "~0.6.2",
-    "lodash": "~3.10.1"
+    "lodash": "~3.10.1",
+    "moment": "~2.11.0"
   }
 }

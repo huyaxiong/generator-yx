@@ -1,6 +1,6 @@
 {
   "name": "generator-yx",
-  "version": "1.0.5",
+  "version": "1.0.6",
   "description": "foundation+compass+susy+node+mongoose+socket.io+gulp",
   "main": "app/index.js",
   "dependencies": {
@@ -9,7 +9,7 @@
   "devDependencies": {
   },
   "scripts": {
-    "start": "",
+    "start": "yo yx",
     "test": ""
   },
   "repository": {
@@ -22,7 +22,7 @@
   "files": [
     "app"
   ],
-  "author": "yx",
+  "author": "huyaxiong",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/huyaxiong/generator-yx/issues"
