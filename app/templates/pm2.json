@@ -34,5 +34,3 @@
     "NODE_PATH":"./server"
   }
 }
-
-// pm2 start pm2.json
