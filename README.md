@@ -24,6 +24,6 @@
 
 
 # Run
-yo yx
-pm2 start pm2.json
-nodemon
+- yo yx
+- pm2 start pm2.json
+- nodemon
