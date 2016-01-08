@@ -1,7 +1,7 @@
 {
   "name": "generator-yx",
-  "version": "1.0.6",
-  "description": "foundation+compass+susy+node+mongoose+socket.io+gulp",
+  "version": "1.0.7",
+  "description": "front & backend skeleton",
   "main": "app/index.js",
   "dependencies": {
     "yeoman-generator": "^0.22.1"
