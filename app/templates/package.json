@@ -1,45 +1,32 @@
 {
-  "name": "yx",
-  "version": "1.0.0",
-  "description": "front & backend skeleton",
-  "main": "server/main.js",
+  "name": "generator-hyx",
+  "version": "1.1.3",
+  "description": "front skeleton",
+  "main": "app/index.js",
   "dependencies": {
-    "express": "4.13.3",
-    "body-parser": "1.14.2",
-    "mongoose": "3.8.30",
-    "socket.io": "1.3.7",
-    "tingodb": "0.4.2",
-    "tungus": "0.0.5"
+    "lodash": "^4.0.0",
+    "yeoman-generator": "^0.22.1"
   },
-  "devDependencies": {
-    "bower": "^1.7.1",
-    "gulp": "^3.8.11",
-    "gulp-compass": "^2.1.0",
-    "gulp-concat": "^2.5.2",
-    "gulp-sourcemaps": "^1.5.0",
-    "gulp-uglify": "^1.1.0",
-    "gulp-ruby-sass": "^1.3.0",
-    "browser-sync": "^2.8.2"
-  },
+  "devDependencies": {},
   "scripts": {
-    "start": "NODE_PATH=./server node server/main.js",
+    "start": "yo hyx",
     "test": ""
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/huyaxiong/generator-yx.git"
+    "url": "git+https://github.com/huyaxiong/generator-hyx.git"
   },
   "keywords": [
     "yeoman-generator"
   ],
   "files": [
-    "client",
-    "server"
+    "app",
+    "module"
   ],
   "author": "huyaxiong",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/huyaxiong/generator-yx/issues"
+    "url": "https://github.com/huyaxiong/generator-hyx/issues"
   },
-  "homepage": "https://github.com/huyaxiong/generator-yx#readme"
+  "homepage": "https://github.com/huyaxiong/generator-hyx#readme"
 }

@@ -1,20 +1,22 @@
 {
-  "name": "generator-yx",
-  "version": "1.1.0",
+  "name": "generator-y",
+  "version": "1.0.0",
   "description": "front & backend skeleton",
   "main": "app/index.js",
   "dependencies": {
+    "lodash": "^4.0.0",
     "yeoman-generator": "^0.22.1"
   },
   "devDependencies": {
+
   },
   "scripts": {
-    "start": "yo yx",
+    "start": "yo y",
     "test": ""
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/huyaxiong/generator-yx.git"
+    "url": "git+https://github.com/huyaxiong/generator-y.git"
   },
   "keywords": [
     "yeoman-generator"
@@ -25,7 +27,7 @@
   "author": "huyaxiong",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/huyaxiong/generator-yx/issues"
+    "url": "https://github.com/huyaxiong/generator-y/issues"
   },
-  "homepage": "https://github.com/huyaxiong/generator-yx#readme"
+  "homepage": "https://github.com/huyaxiong/generator-y#readme"
 }

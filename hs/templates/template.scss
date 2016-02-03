@@ -1,0 +1,22 @@
+@import "compass/css3";
+@import 'foundation';
+@include foundation-typography;
+@include foundation-button;
+@include foundation-forms;
+@import "susy";
+@import "settings";
+
+
+$susy: (
+        global-box-sizing: border-box,
+        gutters: 0,
+        columns: 8,
+        output:isolate,
+        container:$large-breakpoint,
+        use-custom: (
+                background-options: true,
+                breakpoint:false
+        )
+);
+
+@include border-box-sizing;

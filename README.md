@@ -4,13 +4,14 @@
 - foundation 
 - compass
 - susy
-- gulp
+- angular
 - lodash
 - moment
 - createjs
 
 ## Backend
 - node
+- lodash
 - mongoose
 - socket.io
 - tingodb
@@ -19,11 +20,11 @@
 ## Tool
 - bower
 - gulp
-- nodemon
 - pm2
 
-
-# Run
-- yo yx
-- pm2 start pm2.json
-- nodemon
+# Guide
+- yo yx or yo yx f (full stack, default)
+- yo yx c (only client side)
+- yo yx:hs xxx (generate html and scss)
+- yo yx:ngMod xxx (generate angular module, controller and factory)
+- yo yx:ngDrt xxx (generate angular directive)

@@ -1,13 +1,13 @@
 {
-  "name": "pivot",
+  "name": "y",
 //  "cwd"              : "server",
-//  "args"             : ["/Users/hugh.hu/Documents/Projects/pivot"],
+//  "args"             : [""],
   "script": "server/main.js",
   //  "node_args"        : ["--harmony", " --max-stack-size=102400000"],
   "log_date_format": "YYYY-MM-DD HH:mm Z",
   "error_file": "logs/err.log",
   "out_file": "logs/std.log",
-  "pid_file": "logs/pivot.pid",
+  "pid_file": "logs/y.pid",
   "instances": 1,
   //or 0 => 'max'
   "min_uptime": "200s",

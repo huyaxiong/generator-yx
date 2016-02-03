@@ -10,15 +10,14 @@
 /// @type Number
 $form-spacing: rem-calc(16) !default;
 
-@import
-  'text',
-  'checkbox',
-  'label',
-  'help-text',
-  'input-group',
-  'fieldset',
-  'select',
-  'error';
+@import 'text',
+'checkbox',
+'label',
+'help-text',
+'input-group',
+'fieldset',
+'select',
+'error';
 
 @mixin foundation-forms {
   @include foundation-form-text;
