@@ -23,8 +23,8 @@
 - pm2
 
 # Guide
-- yo yx or yo yx f (full stack, default)
-- yo yx c (only client side)
-- yo yx:hs xxx (generate html and scss)
-- yo yx:ngMod xxx (generate angular module, controller and factory)
-- yo yx:ngDrt xxx (generate angular directive)
+- yo y f (full stack, default)
+- yo y c (only client side)
+- yo y:hs xxx (generate html and scss)
+- yo y:ngMod xxx (generate angular module, controller and factory)
+- yo y:ngDrt xxx (generate angular directive)

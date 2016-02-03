@@ -21,7 +21,8 @@ module.exports = Base.extend({
                 'client/scripts', 'client/stylesheets']);
         } else if ('c' === p) {
             this.fs.copy(path.join(__dirname, 'templates', 'client'), '.');
-            this.fs.copy(path.join(__dirname, 'templates', 'package.json'), '.');
+            //this.fs.copy(path.join(__dirname, 'templates', 'package.json'), '.');
+            //this.fs.copy(path.join(__dirname, 'templates', 'README.md'), '.');
             this.spawnCommandSync('mkdir', ['htmls', 'images', 'js', 'maps', 'scripts', 'stylesheets']);
         }
     },
@@ -31,7 +32,6 @@ module.exports = Base.extend({
         //this.spawnCommand('npm', ['install'], {'saveDev': true});
         var p = this.p;
         if (p && !('c' === p || 'f' === p)) {
-
             return;
         } else if (!p || 'f' === p) {
 
