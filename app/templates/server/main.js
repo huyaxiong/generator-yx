@@ -1,26 +1,33 @@
-var express = require('express'),
-    bodyParser = require('body-parser'),
-    path = require('path'),
-    app = express(),
-    config = require('config');
+var express = require('express');
+var bodyParser = require('body-parser');
+var path = require('path');
+var app = express();
+var config = require('config');
 
 require('db')();
 
-require('socket')();
+app.use(bodyParser.urlencoded({
+    extended: true
+}));
 
-app.use(bodyParser());
+app.use(bodyParser.json());
 
 app.set('port', process.env.PORT || config.port);
 
 app.use(express.static(path.resolve(__dirname, '..', 'client')));
 
 app.listen(app.get('port'), function () {
+
     console.log('Express started on http://localhost:' + app.get('port'));
+});
+
+app.get('/', function (req, res) {
+
+    res.sendfile('client/htmls/home.html');
 });
 
 app.post('/test', function (req, res) {
 
-    res.send('Mobile Num:' + req.body.mobileNum);
 });
 
 // custom 404 page

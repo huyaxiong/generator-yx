@@ -1,9 +1,9 @@
-var gulp = require('gulp'),
-    concat = require('gulp-concat'),
-    sourcemaps = require('gulp-sourcemaps'),
-    uglify = require('gulp-uglify'),
-    sass = require('gulp-ruby-sass'),
-    browserSync = require('browser-sync').create();
+var gulp = require('gulp');
+var concat = require('gulp-concat');
+var sourcemaps = require('gulp-sourcemaps');
+var uglify = require('gulp-uglify');
+var sass = require('gulp-ruby-sass');
+var browserSync = require('browser-sync').create();
 
 
 function makeCss(fileName) {

@@ -1,9 +1,53 @@
 var generators = require('yeoman-generator');
 var Base = generators.Base;
 var path = require('path');
-var bd;
+var bowerDependencies;
 
 module.exports = Base.extend({
+
+    initNpmConfig: function () {
+
+        var config = {
+            "name": this.appname,
+            "version": "1.0.0",
+            "description": "",
+            "main": "server/main.js",
+            "scripts": {
+                "start": "NODE_PATH=./server node server/main.js",
+                "test": ""
+            },
+            "author": "",
+            "license": "ISC",
+            "dependencies": {
+            },
+            "devDependencies": {
+            }
+        };
+        this.fs.writeJSON('package.json', config);
+    },
+
+    initBowerConfig: function () {
+
+        var config = {
+            "name": this.appname,
+            "description": "",
+            "main": "",
+            "authors": "",
+            "license": "ISC",
+            "moduleType": [],
+            "homepage": "",
+            "ignore": [
+                "**/.*",
+                "node_modules",
+                "bower_components",
+                "test",
+                "tests"
+            ],
+            "dependencies": {
+            }
+        };
+        this.fs.writeJSON('bower.json', config);
+    },
 
     constructor: function () {
 
@@ -13,8 +57,6 @@ module.exports = Base.extend({
 
     prompting: function () {
 
-        this.spawnCommandSync('npm', ['init']);
-        this.spawnCommandSync('bower', ['init']);
         var cb = this.async();
         this.prompt({
             type: "checkbox",
@@ -25,26 +67,29 @@ module.exports = Base.extend({
                 'gsap#1.18.2', 'owlcarousel#1.3.2'],
             default: ['foundation-sites#6.1.1', 'angular#1.3.15', 'lodash#3.10.1']
         }, function (a) {
-            bd = a.bowerDependencies;
+            bowerDependencies = a.bowerDependencies;
             cb();
         }.bind(this));
     },
 
     writing: function () {
 
+        var cb = this.async();
         var p = this.p;
         if (p && !('c' === p || 'f' === p)) {
             return;
         } else if (!p || 'f' === p) {
             this.fs.copy(path.join(__dirname, 'templates'), '.');
-            this.spawnCommandSync('mkdir', ['client', 'client/htmls', 'client/images', 'client/js', 'client/maps',
+            this.spawnCommandSync('mkdir', ['logs', 'client', 'client/htmls', 'client/images', 'client/js', 'client/maps',
                 'client/scripts', 'client/stylesheets']);
         } else if ('c' === p) {
             this.fs.copy(path.join(__dirname, 'templates', 'client'), '.');
             this.spawnCommandSync('mkdir', ['htmls', 'images', 'js', 'maps', 'scripts', 'stylesheets']);
         }
         this.spawnCommandSync('touch', ['README.md']);
-
+        this.initNpmConfig();
+        this.initBowerConfig();
+        cb();
     },
 
     install: function () {
@@ -65,7 +110,7 @@ module.exports = Base.extend({
                 'browser-sync@2.8.2'], {'saveDev': true}, function () {
             });
 
-            this.bowerInstall(bd, {'save': true}, function () {
+            this.bowerInstall(bowerDependencies, {'save': true}, function () {
                 this.spawnCommandSync('mv', ['-f', 'bower.json', 'bower_components', 'client']);
             }.bind(this));
         } else if ('c' === p) {
@@ -75,12 +120,13 @@ module.exports = Base.extend({
                 'browser-sync@2.8.2'], {'saveDev': true}, function () {
             });
 
-            this.bowerInstall(bd, {'save': true}, function () {
+            this.bowerInstall(bowerDependencies, {'save': true}, function () {
                 this.spawnCommandSync('mv', ['-f', 'bower.json', 'bower_components', 'client']);
             }.bind(this));
         }
     },
 
     done: function () {
+
     }
 });
