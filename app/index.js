@@ -65,7 +65,7 @@ module.exports = Base.extend({
             choices: ['foundation-sites#6.1.1', 'angular#1.3.15', 'lodash#3.10.1', 'moment#2.11.0',
                 'EaselJS#0.8.2', 'PreloadJS#0.6.2', 'SoundJS#0.6.2', 'TweenJS#0.6.2',
                 'gsap#1.18.2', 'owlcarousel#1.3.2'],
-            default: ['foundation-sites#6.1.1', 'angular#1.3.15', 'lodash#3.10.1']
+            default: ['foundation-sites#6.1.1', 'angular#1.3.15']
         }, function (a) {
             bowerDependencies = a.bowerDependencies;
             cb();
@@ -99,9 +99,7 @@ module.exports = Base.extend({
             return;
         } else if (!p || 'f' === p) {
             this.npmInstall(['express@4.13.3', 'body-parser@1.14.2',
-                'mongoose@3.8.30', 'socket.io@1.3.7',
-                'tingodb@0.4.2', 'tungus@0.0.5',
-                'browser-sync@2.8.2'], {'save': true}, function () {
+                'mongoose@4.4.4'], {'save': true}, function () {
             });
 
             this.npmInstall(['bower@1.7.1', 'gulp@3.8.11',

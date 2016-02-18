@@ -1,20 +1,20 @@
 # Tech
 
 ## Front
-- foundation 
 - compass
 - susy
+- foundation 
 - angular
 - lodash
 - moment
+- owlcarousel
 - createjs
+- gsap
 
 ## Backend
 - node
-- lodash
-- mongoose
-- tingodb
 - express
+- mongoose
 
 ## Tool
 - bower
