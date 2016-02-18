@@ -47,7 +47,7 @@ gulp.task('server', function () {
         }
     });
 
-    gulp.watch(['js/*', 'scss/*', 'htmls/*'], function (event) {
+    gulp.watch(['js/*', 'scss/*', '!scss/_settings.scss', 'htmls/*'], function (event) {
         var filePath = event.path;
         var fileName = filePath.slice(filePath.lastIndexOf('/') + 1);
         if (filePath.lastIndexOf('.scss') !== -1) {
