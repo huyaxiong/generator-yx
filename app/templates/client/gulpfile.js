@@ -1,9 +1,10 @@
-var gulp = require('gulp');
-var concat = require('gulp-concat');
-var sourcemaps = require('gulp-sourcemaps');
-var uglify = require('gulp-uglify');
-var sass = require('gulp-ruby-sass');
-var browserSync = require('browser-sync').create();
+const gulp = require('gulp');
+const concat = require('gulp-concat');
+const sourcemaps = require('gulp-sourcemaps');
+const babel = require('gulp-babel');
+const uglify = require('gulp-uglify');
+const sass = require('gulp-ruby-sass');
+const browserSync = require('browser-sync').create();
 
 
 function makeCss(fileName) {
@@ -32,6 +33,9 @@ function makeJs(fileName) {
 
     gulp.src(jsSrc)
         .pipe(sourcemaps.init())
+        .pipe(babel({
+            presets: ['es2015']
+        }))
         .pipe(uglify())
         .pipe(sourcemaps.write('../maps/'))
         .pipe(gulp.dest(jsDest))
