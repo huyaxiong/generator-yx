@@ -62,10 +62,10 @@ module.exports = Base.extend({
             type: "checkbox",
             name: 'bowerDependencies',
             message: 'What do you want?',
-            choices: ['foundation-sites#6.2.0', 'angular#1.3.15', 'lodash#3.10.1', 'moment#2.11.0',
+            choices: ['foundation-sites#6.2.0', 'susy#2.2.12', 'angular#1.3.15',
                 'EaselJS#0.8.2', 'PreloadJS#0.6.2', 'SoundJS#0.6.2', 'TweenJS#0.6.2',
-                'gsap#1.18.2', 'owlcarousel#1.3.2'],
-            default: ['foundation-sites#6.2.0', 'angular#1.3.15']
+                'gsap#1.18.2', 'moment#2.11.0', 'owlcarousel#1.3.2'],
+            default: ['foundation-sites#6.2.0', 'susy#2.2.12']
         }, function (a) {
             bowerDependencies = a.bowerDependencies;
             cb();
@@ -105,8 +105,9 @@ module.exports = Base.extend({
             this.npmInstall(['bower@1.7.1', 'gulp@3.8.11',
                 'gulp-babel@6.1.2', 'babel-cli@6.6.0', 'babel-preset-es2015@6.6.0',
                 'gulp-concat@2.5.2', 'gulp-sourcemaps@1.5.0',
-                'gulp-uglify@1.1.0', 'gulp-ruby-sass@1.3.0',
-                'browser-sync@2.8.2'], {'saveDev': true}, function () {
+                'gulp-uglify@1.1.0', 'gulp-postcss@6.1.0',
+                'autoprefixer@6.3.3', 'postcss-scss@0.1.6',
+                'gulp-sass@2.2.0', 'browser-sync@2.8.2'], {'saveDev': true}, function () {
             });
 
             this.bowerInstall(bowerDependencies, {'save': true}, function () {
@@ -116,8 +117,9 @@ module.exports = Base.extend({
             this.npmInstall(['bower@1.7.1', 'gulp@3.8.11',
                 'gulp-babel@6.1.2', 'babel-cli@6.6.0', 'babel-preset-es2015@6.6.0',
                 'gulp-concat@2.5.2', 'gulp-sourcemaps@1.5.0',
-                'gulp-uglify@1.1.0', 'gulp-ruby-sass@1.3.0',
-                'browser-sync@2.8.2'], {'saveDev': true}, function () {
+                'gulp-uglify@1.1.0', 'gulp-postcss@6.1.0',
+                'autoprefixer@6.3.3', 'postcss-scss@0.1.6',
+                'gulp-sass@2.2.0', 'browser-sync@2.8.2'], {'saveDev': true}, function () {
             });
 
             this.bowerInstall(bowerDependencies, {'save': true}, function () {

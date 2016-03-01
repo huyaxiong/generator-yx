@@ -3,7 +3,10 @@ const concat = require('gulp-concat');
 const sourcemaps = require('gulp-sourcemaps');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
-const sass = require('gulp-ruby-sass');
+const sass = require('gulp-sass');
+const postcss      = require('gulp-postcss');
+const autoprefixer = require('autoprefixer');
+const postcssScss = require('postcss-scss');
 const browserSync = require('browser-sync').create();
 
 
@@ -12,12 +15,13 @@ function makeCss(fileName) {
     var scssSrc = 'scss/' + (fileName || ''),
         cssDest = 'stylesheets/';
 
-    sass(scssSrc, {
-        sourcemap: true,
-        compass: true,
-        require: 'susy',
-        style: 'compressed'
-    }).on('error', sass.logError)
+    gulp.src(scssSrc)
+        .pipe(sourcemaps.init())
+        .pipe(postcss([autoprefixer({browsers: ['last 2 versions']})], {syntax: postcssScss}))
+        .pipe(sass({
+            includePaths: ['bower_components/foundation-sites/scss', 'bower_components/susy/sass'],
+            outputStyle: 'compressed'
+        }).on('error', sass.logError))
         .pipe(sourcemaps.write('../maps/', {
             includeContent: false,
             sourceRoot: '../scss/'
