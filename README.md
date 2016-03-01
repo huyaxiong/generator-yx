@@ -20,7 +20,7 @@
 - bower
 - gulp
 - nodemon
-- pm2
+- babel
 
 # Guide
 - yo yx f (full stack, default)

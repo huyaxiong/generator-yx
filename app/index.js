@@ -13,7 +13,7 @@ module.exports = Base.extend({
             "description": "",
             "main": "server/main.js",
             "scripts": {
-                "start": "NODE_PATH=./server node server/main.js",
+                "start": "NODE_PATH=./server nodemon server/main.js --exec babel-node --presets es2015",
                 "test": ""
             },
             "author": "",
@@ -62,10 +62,10 @@ module.exports = Base.extend({
             type: "checkbox",
             name: 'bowerDependencies',
             message: 'What do you want?',
-            choices: ['foundation-sites#6.1.1', 'angular#1.3.15', 'lodash#3.10.1', 'moment#2.11.0',
+            choices: ['foundation-sites#6.2.0', 'angular#1.3.15', 'lodash#3.10.1', 'moment#2.11.0',
                 'EaselJS#0.8.2', 'PreloadJS#0.6.2', 'SoundJS#0.6.2', 'TweenJS#0.6.2',
                 'gsap#1.18.2', 'owlcarousel#1.3.2'],
-            default: ['foundation-sites#6.1.1', 'angular#1.3.15']
+            default: ['foundation-sites#6.2.0', 'angular#1.3.15']
         }, function (a) {
             bowerDependencies = a.bowerDependencies;
             cb();
@@ -103,8 +103,8 @@ module.exports = Base.extend({
             });
 
             this.npmInstall(['bower@1.7.1', 'gulp@3.8.11',
+                'gulp-babel@6.1.2', 'babel-cli@6.6.0', 'babel-preset-es2015@6.6.0',
                 'gulp-concat@2.5.2', 'gulp-sourcemaps@1.5.0',
-                'gulp-babel@6.1.2', 'babel-preset-es2015@6.5.0',
                 'gulp-uglify@1.1.0', 'gulp-ruby-sass@1.3.0',
                 'browser-sync@2.8.2'], {'saveDev': true}, function () {
             });
@@ -114,8 +114,8 @@ module.exports = Base.extend({
             }.bind(this));
         } else if ('c' === p) {
             this.npmInstall(['bower@1.7.1', 'gulp@3.8.11',
+                'gulp-babel@6.1.2', 'babel-cli@6.6.0', 'babel-preset-es2015@6.6.0',
                 'gulp-concat@2.5.2', 'gulp-sourcemaps@1.5.0',
-                'gulp-babel@6.1.2', 'babel-preset-es2015@6.5.0',
                 'gulp-uglify@1.1.0', 'gulp-ruby-sass@1.3.0',
                 'browser-sync@2.8.2'], {'saveDev': true}, function () {
             });

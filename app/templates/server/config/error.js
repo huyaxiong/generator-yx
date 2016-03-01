@@ -1,17 +1,19 @@
-module.exports = function (app) {
+import app from '../routers/test.js';
 
-    app.use(function (req, res) {
 
-        res.type('text/plain');
-        res.status(404);
-        res.send('404 - Not Found');
-    });
+app.use(function (req, res) {
 
-    app.use(function (err, req, res, next) {
+    res.type('text/plain');
+    res.status(404);
+    res.send('404 - Not Found');
+});
 
-        console.error(err.stack);
-        res.type('text/plain');
-        res.status(500);
-        res.send('500 - Server Error');
-    });
-};
+app.use(function (err, req, res, next) {
+
+    console.error(err.stack);
+    res.type('text/plain');
+    res.status(500);
+    res.send('500 - Server Error');
+});
+
+export default app;
