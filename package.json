@@ -1,6 +1,6 @@
 {
   "name": "generator-yx",
-  "version": "1.3.5",
+  "version": "1.3.6",
   "description": "front & backend skeleton, include foundation, susy, autoprefixer, angular, express, babel, gulp ..",
   "main": "app/index.js",
   "dependencies": {
