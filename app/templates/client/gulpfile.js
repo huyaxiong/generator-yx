@@ -1,8 +1,8 @@
 const gulp = require('gulp');
 const concat = require('gulp-concat');
 const sourcemaps = require('gulp-sourcemaps');
-const babel = require('gulp-babel');
 //const ngAnnotate = require('gulp-ng-annotate');
+const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const sass = require('gulp-sass');
 const postcss      = require('gulp-postcss');
@@ -20,7 +20,7 @@ function makeCss(fileName) {
         .pipe(sourcemaps.init())
         .pipe(postcss([autoprefixer({browsers: ['last 10 versions']})], {syntax: postcssScss}))
         .pipe(sass({
-            includePaths: ['bower_components/foundation-sites/scss', 'bower_components/susy/sass'],
+            //includePaths: ['bower_components/foundation-sites/scss', 'bower_components/susy/sass'],
             outputStyle: 'compressed'
         }).on('error', sass.logError))
         .pipe(sourcemaps.write('../maps/', {
@@ -33,26 +33,37 @@ function makeCss(fileName) {
 
 function makeJs(fileName) {
 
+    //var jsSrc = ['js/*.mod.js', 'js/*.ctrl.js', 'js/*.svc.js', 'js/*.drt.js'],
     var jsSrc = 'js/' + (fileName || ''),
         jsDest = 'scripts/';
 
     gulp.src(jsSrc)
         .pipe(sourcemaps.init())
+        //.pipe(concat('app.js'))
+        //.pipe(ngAnnotate())
         .pipe(babel({
             presets: ['es2015']
         }))
-        //.pipe(concat('app.js'))
-        //.pipe(ngAnnotate())
         .pipe(uglify())
         .pipe(sourcemaps.write('../maps/'))
         .pipe(gulp.dest(jsDest))
         .pipe(browserSync.reload({stream: true}));
 }
 
+//function makePartials(fileName) {
+//
+//    var src = 'js/partials/' + (fileName || ''),
+//        dest = 'htmls/partials/';
+//
+//    gulp.src(src)
+//        .pipe(gulp.dest(dest))
+//        .pipe(browserSync.reload({stream: true}));
+//}
+
 gulp.task('server', function () {
 
     browserSync.init({
-        startPath: 'htmls/test.html',
+        startPath: 'htmls/index.html',
         server: {
             baseDir: './'
         }
@@ -65,6 +76,8 @@ gulp.task('server', function () {
             makeCss(fileName);
         } else if (filePath.lastIndexOf('.js') !== -1) {
             makeJs(fileName);
+        //} else if (filePath.indexOf('partials') !== -1) {
+        //    makePartials(fileName);
         } else {
             browserSync.reload();
         }

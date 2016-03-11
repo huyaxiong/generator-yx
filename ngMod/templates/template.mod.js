@@ -1,4 +1,5 @@
-angular.module('<%= name %>App', []);
+angular.module('<%= name %>App', ['ui.router', 'ngAnimate', 'ngResource']);
+    //.config(configFunc);
 
 //function configFunc($stateProvider, $urlRouterProvider) {
 //
@@ -7,7 +8,7 @@ angular.module('<%= name %>App', []);
 //    $stateProvider
 //        .state('index', {
 //            url: "/index",
-//            templateUrl: "index.html",
+//            templateUrl: "partials/index.html",
 //            controller: 'IndexCtrl'
 //        });
 //}
