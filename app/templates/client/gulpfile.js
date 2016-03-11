@@ -2,6 +2,7 @@ const gulp = require('gulp');
 const concat = require('gulp-concat');
 const sourcemaps = require('gulp-sourcemaps');
 const babel = require('gulp-babel');
+//const ngAnnotate = require('gulp-ng-annotate');
 const uglify = require('gulp-uglify');
 const sass = require('gulp-sass');
 const postcss      = require('gulp-postcss');
@@ -17,7 +18,7 @@ function makeCss(fileName) {
 
     gulp.src(scssSrc)
         .pipe(sourcemaps.init())
-        .pipe(postcss([autoprefixer({browsers: ['last 2 versions']})], {syntax: postcssScss}))
+        .pipe(postcss([autoprefixer({browsers: ['last 10 versions']})], {syntax: postcssScss}))
         .pipe(sass({
             includePaths: ['bower_components/foundation-sites/scss', 'bower_components/susy/sass'],
             outputStyle: 'compressed'
@@ -40,6 +41,8 @@ function makeJs(fileName) {
         .pipe(babel({
             presets: ['es2015']
         }))
+        //.pipe(concat('app.js'))
+        //.pipe(ngAnnotate())
         .pipe(uglify())
         .pipe(sourcemaps.write('../maps/'))
         .pipe(gulp.dest(jsDest))

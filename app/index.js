@@ -62,7 +62,8 @@ module.exports = Base.extend({
             type: "checkbox",
             name: 'bowerDependencies',
             message: 'What do you want?',
-            choices: ['foundation-sites#6.2.0', 'susy#2.2.12', 'angular#1.3.15',
+            choices: ['foundation-sites#6.2.0', 'susy#2.2.12', 'angular#1.4.9',
+                'ui-route#0.2.18', 'angular-resource#1.4.9', 'angular-animate#1.4.9', 'oclazyload#1.0.9',
                 'EaselJS#0.8.2', 'PreloadJS#0.6.2', 'SoundJS#0.6.2', 'TweenJS#0.6.2',
                 'gsap#1.18.2', 'moment#2.11.0', 'owlcarousel#1.3.2', 'hammer.js#2.0.6'],
             default: ['foundation-sites#6.2.0', 'susy#2.2.12']
@@ -81,10 +82,10 @@ module.exports = Base.extend({
         } else if (!p || 'f' === p) {
             this.fs.copy(path.join(__dirname, 'templates'), '.');
             this.spawnCommandSync('mkdir', ['logs', 'client', 'client/htmls', 'client/images', 'client/js', 'client/maps',
-                'client/scripts', 'client/stylesheets']);
+                'client/scripts']);
         } else if ('c' === p) {
             this.fs.copy(path.join(__dirname, 'templates', 'client'), '.');
-            this.spawnCommandSync('mkdir', ['htmls', 'images', 'js', 'maps', 'scripts', 'stylesheets']);
+            this.spawnCommandSync('mkdir', ['htmls', 'images', 'js', 'maps', 'scripts']);
         }
         this.spawnCommandSync('touch', ['README.md']);
         this.initNpmConfig();
