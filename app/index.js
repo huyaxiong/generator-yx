@@ -13,7 +13,7 @@ module.exports = Base.extend({
             "description": "",
             "main": "server/main.js",
             "scripts": {
-                "start": "NODE_PATH=./server nodemon server/main.js --exec babel-node --presets es2015",
+                "start": "NODE_PATH=./server nodemon server/main.js",
                 "test": ""
             },
             "author": "",
@@ -104,7 +104,7 @@ module.exports = Base.extend({
             });
 
             this.npmInstall(['bower@1.7.1', 'gulp@3.8.11',
-                'gulp-babel@6.1.2', 'babel-cli@6.6.0', 'babel-preset-es2015@6.6.0',
+                'gulp-babel@6.1.2', 'babel-preset-es2015@6.6.0',
                 'gulp-concat@2.5.2', 'gulp-sourcemaps@1.5.0',
                 'gulp-uglify@1.1.0', 'gulp-postcss@6.1.0',
                 'autoprefixer@6.3.3', 'postcss-scss@0.1.6',
@@ -116,7 +116,7 @@ module.exports = Base.extend({
             }.bind(this));
         } else if ('c' === p) {
             this.npmInstall(['bower@1.7.1', 'gulp@3.8.11',
-                'gulp-babel@6.1.2', 'babel-cli@6.6.0', 'babel-preset-es2015@6.6.0',
+                'gulp-babel@6.1.2', 'babel-preset-es2015@6.6.0',
                 'gulp-concat@2.5.2', 'gulp-sourcemaps@1.5.0',
                 'gulp-uglify@1.1.0', 'gulp-postcss@6.1.0',
                 'autoprefixer@6.3.3', 'postcss-scss@0.1.6',

@@ -1,10 +1,11 @@
-import mongoose from 'mongoose';
+var mongoose = require('mongoose');
 
 
-mongoose.connect('mongodb://localhost:27017/local');
-mongoose.connection.once('open', function() {
+module.exports = function () {
 
-    console.log('mongodb connected.');
-});
+    mongoose.connect('mongodb://localhost:27017/local');
+    mongoose.connection.once('open', function() {
 
-export default mongoose;
+        console.log('mongodb connected.');
+    });
+};

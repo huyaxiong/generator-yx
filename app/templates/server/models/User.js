@@ -1,10 +1,12 @@
-import mongoose from 'config/db';
+var mongoose = require('mongoose');
 
 
-var userSchema = mongoose.Schema({
-    name: String,
-    mobile: String
-});
-var User = mongoose.model('User', userSchema);
+module.exports = function () {
 
-export default User;
+    var userSchema = mongoose.Schema({
+        name: String,
+        mobile: String
+    });
+
+    return mongoose.model('User', userSchema);
+};

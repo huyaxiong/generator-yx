@@ -1,25 +1,30 @@
-import express from 'express';
-import bodyParser from 'body-parser';
-import path from 'path';
-import settings from './settings';
+var express = require('express');
+var bodyParser = require('body-parser');
+var path = require('path');
+var settings = require('./settings');
 
 
-let app = express();
+module.exports = function () {
 
-app.set('port', process.env.PORT || settings.port);
+    var app = express();
 
-app.listen(app.get('port'), function () {
+    app.set('port', process.env.PORT || settings.port);
 
-    console.log('Express started on http://localhost:' + app.get('port'));
-});
+    app.listen(app.get('port'), function () {
 
-app.use(bodyParser.urlencoded({
-    extended: true
-}));
-app.use(bodyParser.json());
-app.use(express.static(path.resolve(__dirname, '..', 'client')));
+        console.log('Express started on http://localhost:' + app.get('port'));
+    });
 
-export default app;
+    app.use(bodyParser.urlencoded({
+        extended: true
+    }));
+    app.use(bodyParser.json());
+    //app.use(bodyParser.text({
+    //    limit:'2mb'
+    //}));
+    app.use(express.static(path.resolve(__dirname, '..', 'client')));
 
+    return app;
+};
 
 

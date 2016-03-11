@@ -1,11 +1,10 @@
-import app from '../config/router';
-import User from '../models/User';
+var User = require('../models/User');
 
 
-app.get('/test', function (req, res) {
+module.exports = function (app) {
 
-    console.log('test');
-    User.create({user:'fdfdf'});
-});
+    app.get('/test', function (req, res) {
 
-export default app;
+        console.log('test')
+    });
+};
