@@ -13,7 +13,7 @@ module.exports = Base.extend({
             "description": "",
             "main": "server/main.js",
             "scripts": {
-                "start": "NODE_PATH=./server nodemon server/main.js",
+                "start": "NODE_PATH=./server node server/main.js",
                 "test": ""
             },
             "author": "",
@@ -99,7 +99,7 @@ module.exports = Base.extend({
         if (p && !('c' === p || 'f' === p)) {
             return;
         } else if (!p || 'f' === p) {
-            this.npmInstall(['express@4.13.3', 'body-parser@1.14.2', 'request@2.69.0',
+            this.npmInstall(['express@4.13.3', 'body-parser@1.14.2', 'compression@1.6.1', 'request@2.69.0',
                 'mongoose@4.4.4'], {'save': true}, function () {
             });
 
