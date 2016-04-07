@@ -9,10 +9,8 @@ module.exports = function () {
 
     var app = express();
     app.set('port', process.env.PORT || settings.port);
-    app.use(bodyParser.urlencoded({
-        extended: true
-    }));
-    app.use(bodyParser.json());
+    app.use(bodyParser.json({limit: '20mb'}));
+    app.use(bodyParser.urlencoded({limit: '20mb', extended: true}));
     app.use(express.static(path.resolve(__dirname, '..', '..', 'client')));
     app.use(compress());
 

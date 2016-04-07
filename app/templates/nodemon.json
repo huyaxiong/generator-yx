@@ -6,11 +6,12 @@
   ],
   "verbose": true,
   "execMap": {
-    "js": "npm start"
+    "js": "NODE_PATH=./server node"
   },
   "events": {
     "restart": "osascript -e 'display notification \"App restarted due to:\n'$FILENAME'\" with title \"nodemon\"'"
   },
+
   "watch": [
     "server/",
     "client/"

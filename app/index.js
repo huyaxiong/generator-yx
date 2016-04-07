@@ -3,6 +3,7 @@ var Base = generators.Base;
 var path = require('path');
 var bowerDependencies;
 
+
 module.exports = Base.extend({
 
     initNpmConfig: function () {
@@ -66,7 +67,7 @@ module.exports = Base.extend({
                 'ui-route#0.2.18', 'angular-resource#1.4.9', 'angular-animate#1.4.9', 'oclazyload#1.0.9',
                 'EaselJS#0.8.2', 'PreloadJS#0.6.2', 'SoundJS#0.6.2', 'TweenJS#0.6.2',
                 'gsap#1.18.2', 'moment#2.11.0', 'owlcarousel#1.3.2', 'hammer.js#2.0.6'],
-            default: ['foundation-sites#6.2.0', 'susy#2.2.12']
+            default: []
         }, function (a) {
             bowerDependencies = a.bowerDependencies;
             cb();
@@ -81,11 +82,11 @@ module.exports = Base.extend({
             return;
         } else if (!p || 'f' === p) {
             this.fs.copy(path.join(__dirname, 'templates'), '.');
-            this.spawnCommandSync('mkdir', ['logs', 'client', 'client/htmls', 'client/images', 'client/js', 'client/maps',
-                'client/scripts']);
+            this.spawnCommandSync('mkdir', ['logs', 'client', 'client/htmls', 'client/images', 'client/js',
+                'client/maps']);
         } else if ('c' === p) {
             this.fs.copy(path.join(__dirname, 'templates', 'client'), '.');
-            this.spawnCommandSync('mkdir', ['htmls', 'images', 'js', 'maps', 'scripts']);
+            this.spawnCommandSync('mkdir', ['htmls', 'images', 'js', 'maps']);
         }
         this.spawnCommandSync('touch', ['README.md']);
         this.initNpmConfig();

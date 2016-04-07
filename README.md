@@ -25,6 +25,9 @@
 # Guide
 - yo yx f (full stack, default)
 - yo yx c (only client side)
-- yo yx:hs xxx (generate html and scss)
-- yo yx:ngMod xxx (generate angular module, controller and factory)
+- yo yx:h xxx (generate html)
+- yo yx:ngMod xxx (generate angular module)
+- yo yx:ngCtrl xxx (generate angular controller)
+- yo yx:ngFty xxx (generate angular factory)
+- yo yx:ngSvc xxx (generate angular service)
 - yo yx:ngDrt xxx (generate angular directive)

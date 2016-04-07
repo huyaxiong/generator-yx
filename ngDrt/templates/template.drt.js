@@ -1,3 +1,7 @@
+angular.module('<%= name %>App')
+    .directive('<%= name %>', <%= name %>Drt);
+
+
 function <%= name %>Drt() {
 
     var directive = {

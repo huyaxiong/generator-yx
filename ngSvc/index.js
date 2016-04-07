@@ -12,15 +12,11 @@ module.exports = generators.Base.extend({
     writing: function () {
 
         this.fs.copyTpl(
-            this.templatePath('template.drt.js'),
-            this.destinationPath(this.p + '.drt.js'),
+            this.templatePath('template.svc.js'),
+            this.destinationPath(this.p + '.svc.js'),
             {
                 name: this.p
             }
-        );
-        this.fs.copy(
-            this.templatePath('template.drt.html'),
-            this.p + '.drt.html'
         );
     }
 });

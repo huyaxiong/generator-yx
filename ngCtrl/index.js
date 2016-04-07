@@ -1,5 +1,5 @@
 var generators = require('yeoman-generator');
-var path = require('path');
+
 
 module.exports = generators.Base.extend({
 
@@ -12,13 +12,12 @@ module.exports = generators.Base.extend({
     writing: function () {
 
         this.fs.copyTpl(
-            this.templatePath('template.html'),
-            this.destinationPath(path.join('htmls', this.p + '.html')),
-            {name: this.p}
-        );
-        this.fs.copy(
-            this.templatePath('template.scss'),
-            path.join('scss', this.p + '.scss')
+            this.templatePath('template.ctrl.js'),
+            this.destinationPath(path.join(this.p, this.p + '.ctrl.js')),
+            {
+                name: this.p,
+                capitalizedName: _.capitalize(this.p)
+            }
         );
     }
 });
