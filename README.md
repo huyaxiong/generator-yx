@@ -5,9 +5,6 @@
 - susy
 - foundation 
 - angular
-- lodash
-- moment
-- owlcarousel
 - createjs
 - gsap
 
