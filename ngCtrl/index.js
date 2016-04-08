@@ -1,4 +1,5 @@
 var generators = require('yeoman-generator');
+var _ = require('lodash');
 
 
 module.exports = generators.Base.extend({
@@ -13,7 +14,7 @@ module.exports = generators.Base.extend({
 
         this.fs.copyTpl(
             this.templatePath('template.ctrl.js'),
-            this.destinationPath(path.join(this.p, this.p + '.ctrl.js')),
+            this.destinationPath(this.p + '.ctrl.js'),
             {
                 name: this.p,
                 capitalizedName: _.capitalize(this.p)
