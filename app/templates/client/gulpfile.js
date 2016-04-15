@@ -15,7 +15,7 @@ const browserSync = require('browser-sync').create();
 function makeCss() {
 
     var scssSrc = 'scss/shoefie.scss',
-        cssDest = 'stylesheets/';
+        cssDest = 'stylesheet/';
 
     gulp.src(scssSrc)
         .pipe(sourcemaps.init())
@@ -39,7 +39,7 @@ function makeCss() {
 function makeJs() {
 
     var jsSrc = ['js/app.js', 'js/ctrl/*.ctrl.js', 'js/svc/*.svc.js', 'js/drt/*.drt.js'],
-        jsDest = 'scripts/';
+        jsDest = 'script/';
 
     gulp.src(jsSrc)
         .pipe(sourcemaps.init())
@@ -57,7 +57,7 @@ function makeJs() {
 function makeHtml(filePath) {
 
     var src = filePath || ['js/partials/*.html', 'js/drt/*.html'],
-        dest = 'htmls/partials/';
+        dest = 'html/partials/';
 
     gulp.src(src)
         .pipe(gulp.dest(dest))
@@ -67,13 +67,13 @@ function makeHtml(filePath) {
 gulp.task('server', function () {
 
     browserSync.init({
-        startPath: 'htmls/shoefie.html',
+        startPath: 'html/shoefie.html',
         server: {
             baseDir: './'
         }
     });
 
-    gulp.watch(['js/**/*', 'scss/*', 'htmls/*'], function (event) {
+    gulp.watch(['js/**/*', 'scss/*', 'html/*'], function (event) {
         var filePath = event.path;
         if (filePath.lastIndexOf('.scss') !== -1) {
             makeCss();
