@@ -99,7 +99,7 @@ module.exports = Base.extend({
             return;
         } else if (!p || 'f' === p) {
             this.npmInstall(['express@4.13.3', 'body-parser@1.14.2', 'compression@1.6.1', 'request@2.69.0',
-                'mongoose@4.4.4'], {'save': true}, function () {
+                'mongoose@4.4.4', 'node-uuid@1.4.7', 'moment@2.12.0'], {'save': true}, function () {
             });
 
             this.npmInstall(['bower@1.7.1', 'gulp@3.8.11',
@@ -129,6 +129,6 @@ module.exports = Base.extend({
     },
 
     done: function () {
-
+        console.log('done.')
     }
 });

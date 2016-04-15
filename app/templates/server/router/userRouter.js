@@ -1,4 +1,5 @@
 const User = require('../model/User');
+const uuid = require('node-uuid');
 
 
 module.exports = function (app) {
