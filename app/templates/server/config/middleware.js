@@ -16,7 +16,7 @@ module.exports = function () {
 
     app.listen(app.get('port'), function () {
 
-        console.log('Express started on http://localhost:' + app.get('port'));
+        console.log('express started.');
     });
 
     return app;
