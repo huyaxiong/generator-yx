@@ -64,10 +64,10 @@ function makeHtml(filePath) {
         .pipe(browserSync.reload({stream: true}));
 }
 
-gulp.task('server', function () {
+gulp.task('watch', function () {
 
     browserSync.init({
-        startPath: 'html/shoefie.html',
+        startPath: 'html/index.html',
         server: {
             baseDir: './'
         }
