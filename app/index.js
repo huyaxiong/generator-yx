@@ -80,11 +80,11 @@ module.exports = Base.extend({
             return;
         } else if (!p || 'f' === p) {
             this.fs.copy(path.join(__dirname, 'templates'), '.');
-            this.spawnCommandSync('mkdir', ['logs', 'client', 'client/html', 'client/image', 'client/js',
+            this.spawnCommandSync('mkdir', ['logs', 'client', 'client', 'client/image', 'client/js',
                 'client/map']);
         } else if ('c' === p) {
             this.fs.copy(path.join(__dirname, 'templates', 'client'), '.');
-            this.spawnCommandSync('mkdir', ['html', 'image', 'js', 'map']);
+            this.spawnCommandSync('mkdir', ['image', 'js', 'map']);
         }
         this.spawnCommandSync('touch', ['README.md']);
         this.initNpmConfig();

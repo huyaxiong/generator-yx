@@ -1,5 +1,10 @@
 module.exports = function (app) {
 
+    app.get('/', function (req, res) {
+
+        res.redirect('index.html');
+    });
+
     app.use(function (req, res) {
 
         res.type('text/plain');
