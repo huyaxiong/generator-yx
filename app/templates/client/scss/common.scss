@@ -1,0 +1,12 @@
+@import "utils";
+
+
+@include border-box-sizing;
+
+body {
+  min-width: $large-breakpoint;
+
+  @include susy-breakpoint($mobile, $susy-mobile) {
+    min-width: $small-breakpoint;
+  }
+}
