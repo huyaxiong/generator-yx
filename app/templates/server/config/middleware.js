@@ -9,10 +9,10 @@ module.exports = function () {
 
     var app = express();
     app.set('port', process.env.PORT || settings.port);
+    app.use(compress());
     app.use(bodyParser.json({limit: '20mb'}));
     app.use(bodyParser.urlencoded({limit: '20mb', extended: true}));
     app.use(express.static(path.resolve(__dirname, '..', '..', 'client')));
-    app.use(compress());
 
     app.listen(app.get('port'), function () {
 

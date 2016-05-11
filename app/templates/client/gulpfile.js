@@ -1,7 +1,7 @@
 const gulp = require('gulp');
 const concat = require('gulp-concat');
 const sourcemaps = require('gulp-sourcemaps');
-const ngAnnotate = require('gulp-ng-annotate');
+//const ngAnnotate = require('gulp-ng-annotate');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const sass = require('gulp-sass');
@@ -38,7 +38,8 @@ function makeCss() {
 
 function makeJs() {
 
-    var jsSrc = ['js/app.js', 'js/ctrl/*.ctrl.js', 'js/svc/*.svc.js', 'js/drt/*.drt.js'],
+    //var jsSrc = ['js/app.js', 'js/ctrl/*.ctrl.js', 'js/svc/*.svc.js', 'js/drt/*.drt.js'],
+    var jsSrc = ['js/*.js'],
         jsDest = 'script/';
 
     gulp.src(jsSrc)
@@ -54,33 +55,33 @@ function makeJs() {
         .pipe(browserSync.reload({stream: true}));
 }
 
-function makeHtml(filePath) {
+//function makeHtml(filePath) {
+//
+//    var src = filePath || ['js/partials/*.html', 'js/drt/*.html'],
+//        dest = 'html/partials/';
+//
+//    gulp.src(src)
+//        .pipe(gulp.dest(dest))
+//        .pipe(browserSync.reload({stream: true}));
+//}
 
-    var src = filePath || ['js/partials/*.html', 'js/drt/*.html'],
-        dest = 'html/partials/';
-
-    gulp.src(src)
-        .pipe(gulp.dest(dest))
-        .pipe(browserSync.reload({stream: true}));
-}
-
-gulp.task('watch', function () {
+gulp.task('default', function () {
 
     browserSync.init({
-        startPath: 'html/index.html',
+        startPath: 'index.html',
         server: {
             baseDir: './'
         }
     });
 
-    gulp.watch(['js/**/*', 'scss/*', 'html/*'], function (event) {
+    gulp.watch(['js/**/*', 'scss/*', 'index.html'], function (event) {
         var filePath = event.path;
         if (filePath.lastIndexOf('.scss') !== -1) {
             makeCss();
         } else if (filePath.lastIndexOf('.js') !== -1) {
             makeJs();
-        } else if (filePath.lastIndexOf('js') !== -1 && filePath.lastIndexOf('.html') !== -1) {
-            makeHtml(filePath);
+            //} else if (filePath.lastIndexOf('js') !== -1 && filePath.lastIndexOf('.html') !== -1) {
+            //    makeHtml(filePath);
         } else {
             browserSync.reload();
         }
@@ -91,5 +92,5 @@ gulp.task('build', function () {
 
     makeCss();
     makeJs();
-    makeHtml();
+    //makeHtml();
 });
