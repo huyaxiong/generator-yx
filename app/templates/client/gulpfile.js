@@ -14,7 +14,7 @@ const browserSync = require('browser-sync').create();
 
 function makeCss() {
 
-    var scssSrc = 'scss/shoefie.scss',
+    var scssSrc = 'scss/app.scss',
         cssDest = 'stylesheet/';
 
     gulp.src(scssSrc)
@@ -24,7 +24,7 @@ function makeCss() {
         }).on('error', sass.logError))
         .pipe(postcss([autoprefixer({browsers: ['last 10 versions']}),
             pxtorem({
-                rootValue: 75,
+                //rootValue: 75,
                 mediaQuery: true,
                 propWhiteList: []
             })], {syntax: postcssScss}))
