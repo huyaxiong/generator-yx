@@ -48,7 +48,7 @@ function makeJs() {
         .pipe(babel({
             presets: ['es2015']
         }))
-        .pipe(ngAnnotate())
+        //.pipe(ngAnnotate())
         .pipe(uglify())
         .pipe(sourcemaps.write('../maps/'))
         .pipe(gulp.dest(jsDest))
