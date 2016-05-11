@@ -28,7 +28,7 @@ function makeCss() {
                 mediaQuery: true,
                 propWhiteList: []
             })], {syntax: postcssScss}))
-        .pipe(sourcemaps.write('../maps/', {
+        .pipe(sourcemaps.write('../map/', {
             includeContent: false,
             sourceRoot: '../scss/'
         }))
@@ -50,7 +50,7 @@ function makeJs() {
         }))
         //.pipe(ngAnnotate())
         .pipe(uglify())
-        .pipe(sourcemaps.write('../maps/'))
+        .pipe(sourcemaps.write('../map/'))
         .pipe(gulp.dest(jsDest))
         .pipe(browserSync.reload({stream: true}));
 }
