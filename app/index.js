@@ -60,7 +60,7 @@ module.exports = Base.extend({
             type: "checkbox",
             name: 'bowerDependencies',
             message: 'What do you want?',
-            choices: ['foundation-sites#6.2.0', 'susy#2.2.12', 'angular#1.4.9',
+            choices: ['jquery#2.2.3', 'susy#2.2.12', 'foundation-sites#6.2.1', 'angular#1.4.9',
                 'ui-route#0.2.18', 'angular-resource#1.4.9',
                 'angular-animate#1.4.9', 'oclazyload#1.0.9',
                 'EaselJS#0.8.2', 'PreloadJS#0.6.2',
