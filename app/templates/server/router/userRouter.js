@@ -1,11 +1,11 @@
 const User = require('../model/user');
 const uuid = require('node-uuid');
+const router =require('express').Router();
 
 
-module.exports = function (app) {
+router.get('/', function (req, res) {
 
-    app.get('/user', function (req, res) {
+    console.log('test')
+});
 
-        console.log('test')
-    });
-};
+module.exports = router;

@@ -2,9 +2,8 @@ require('./config/db')();
 
 var app = require('./config/middleware')();
 
-require('./router/userRouter')(app);
+require('./router')(app);
 
-require('./config/errorHandler')(app);
 
 
 
