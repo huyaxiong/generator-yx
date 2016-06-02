@@ -1,4 +1,4 @@
-angular.module('<%= name %>App')
+angular.module('app')
     .controller('<%= capitalizedName %>Ctrl', <%= capitalizedName %>Ctrl);
 
 

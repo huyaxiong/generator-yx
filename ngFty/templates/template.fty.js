@@ -1,4 +1,4 @@
-angular.module('<%= name %>App')
+angular.module('app')
     .factory('<%= name %>Fty', <%= name %>Fty);
 
 

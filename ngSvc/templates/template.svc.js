@@ -1,4 +1,4 @@
-angular.module('<%= name %>App')
+angular.module('app')
     .service('<%= name %>Svc', <%= name %>Svc);
 
 

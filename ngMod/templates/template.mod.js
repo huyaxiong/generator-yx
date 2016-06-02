@@ -1,4 +1,4 @@
-angular.module('<%= name %>App', ['ui.router', 'ngAnimate', 'ngResource'])
+angular.module('app', ['ui.router', 'ngAnimate', 'ngResource'])
     .config(configFunc).run(runFunc);
 
 

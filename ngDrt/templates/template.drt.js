@@ -1,4 +1,4 @@
-angular.module('<%= name %>App')
+angular.module('app')
     .directive('<%= name %>', <%= name %>Drt);
 
 
