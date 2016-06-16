@@ -2,7 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const compress = require('compression');
 const path = require('path');
-const settings = require('./settings');
+const settings = require('../settings');
 
 
 module.exports = function () {
