@@ -8,7 +8,7 @@ var npmDevDeps = ['gulp@3.8.11',
     'gulp-concat@2.5.2', 'gulp-sourcemaps@1.5.0',
     'gulp-uglify@1.1.0', 'gulp-postcss@6.1.0',
     'autoprefixer@6.3.3', 'postcss-scss@0.1.6', 'postcss-pxtorem@3.3.1',
-    'gulp-sass@2.2.0', 'browser-sync@2.8.2'];
+    'gulp-sass@2.2.0', 'browser-sync@2.8.2', 'mocha@2.5.3'];
 
 
 module.exports = Base.extend({
