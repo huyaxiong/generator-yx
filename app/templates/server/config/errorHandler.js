@@ -19,4 +19,8 @@ module.exports = function (app) {
         res.status(500);
         res.send('500 - Server Error');
     });
+
+    app.listen(app.get('port'), function () {
+        console.log('app started.');
+    });
 };
