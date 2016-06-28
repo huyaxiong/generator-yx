@@ -20,7 +20,4 @@ module.exports = function (app) {
         res.send('500 - Server Error');
     });
 
-    app.listen(app.get('port'), function () {
-        console.log('app started.');
-    });
 };

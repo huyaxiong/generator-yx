@@ -16,6 +16,10 @@ module.exports = function () {
     app.use("/node_modules", express.static(path.resolve(__dirname, '..', '..', 'node_modules')));
     app.use(express.static(path.resolve(__dirname, '..', '..', 'client')));
     app.use(morgan('tiny'));
+
+    app.listen(app.get('port'), function () {
+        console.log('app started.');
+    });
     return app;
 };
 
