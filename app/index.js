@@ -83,7 +83,7 @@ module.exports = Base.extend({
             return;
         } else if (!p || 'f' === p) {
             var backendDeps = ['express@4.13.3', 'body-parser@1.14.2', 'compression@1.6.1', 'request@2.69.0',
-                'mongoose@4.4.4', 'node-uuid@1.4.7', 'moment@2.12.0', 'multer@1.1.0'];
+                'mongoose@4.4.4', 'node-uuid@1.4.7', 'moment@2.12.0', 'multer@1.1.0', 'morgan@1.7.0'];
             npmDeps = npmDeps.concat(backendDeps);
         }
         this.npmInstall(npmDeps, {'save': true});
