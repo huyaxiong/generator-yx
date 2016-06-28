@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "target": "es5",
+    "module": "system",
+    "moduleResolution": "node",
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
+    "sourceMap": false,
+    "removeComments": true,
+    "noImplicitAny": false,
+    "outFile": "client/script/app.js"
+  },
+  "exclude": [
+    "node_modules",
+    "server"
+  ],
+  "buildOnSave": true,
+  "compileOnSave": true
+}

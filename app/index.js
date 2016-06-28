@@ -1,7 +1,6 @@
 var generators = require('yeoman-generator');
 var Base = generators.Base;
 var path = require('path');
-var bowerDependencies;
 var npmDeps = [];
 var npmDevDeps = ['gulp@3.8.11',
     'gulp-babel@6.1.2', 'babel-preset-es2015@6.6.0',
@@ -42,7 +41,7 @@ module.exports = Base.extend({
         
         var frontendDeps = ['jquery@2.2.3', 'susy@2.2.12', 'foundation-sites@6.2.3', 'angular@1.4.9',
             'ui-route@0.2.18', 'angular-resource@1.4.9', 'angular-animate@1.4.9',
-            'gsap@1.18.2', 'popmotion@5.0.12', 'hammer.js@2.0.6'];
+            'gsap@1.18.2', 'popmotion@5.0.12', 'hammer.js@2.0.6', 'pixi.js@3.0.11'];
         var cb = this.async();
         
         this.prompt({
@@ -65,7 +64,7 @@ module.exports = Base.extend({
             return;
         } else if (!p || 'f' === p) {
             this.fs.copy(path.join(__dirname, 'templates'), '.');
-            this.spawnCommandSync('mkdir', ['logs', 'client', 'client', 'client/image', 'client/js',
+            this.spawnCommandSync('mkdir', ['log', 'client', 'client/image', 'client/js',
                 'client/map']);
         } else if ('c' === p) {
             this.fs.copy(path.join(__dirname, 'templates', 'client'), '.');

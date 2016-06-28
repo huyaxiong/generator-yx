@@ -28,3 +28,4 @@
 - yo yx:ngFty xxx (generate angular factory)
 - yo yx:ngSvc xxx (generate angular service)
 - yo yx:ngDrt xxx (generate angular directive)
+- yo yx:ts (add ts config file)

@@ -10,15 +10,16 @@ const autoprefixer = require('autoprefixer');
 const pxtorem = require('postcss-pxtorem');
 const postcssScss = require('postcss-scss');
 const browserSync = require('browser-sync').create();
+const clientDir = 'client/';
 
 
 function makeCss() {
 
-    var scssSrc = 'client/scss/app.scss',
-        cssDest = 'client/stylesheet/';
+    var scssSrc = clientDir + 'scss/app.scss',
+        cssDest = clientDir + 'stylesheet/';
 
     gulp.src(scssSrc)
-    // .pipe(sourcemaps.init())
+        .pipe(sourcemaps.init())
         .pipe(sass({
             // includePaths: ['node_modules/materialize-css/sass', 'node_modules/susy/sass'],
             outputStyle: 'compressed'
@@ -30,36 +31,36 @@ function makeCss() {
             //     propWhiteList: []
             // })
         ], {syntax: postcssScss}))
-        // .pipe(sourcemaps.write('../map/', {
-        //     includeContent: false,
-        //     sourceRoot: '../scss/'
-        // }))
+        .pipe(sourcemaps.write('../map/', {
+            includeContent: false,
+            sourceRoot: '../scss/'
+        }))
         .pipe(gulp.dest(cssDest))
         .pipe(browserSync.reload({stream: true}));
 }
 
 function makeJs() {
 
-    var jsSrc = ['client/js/app.js', 'client/js/ctrl/*.ctrl.js', 'client/js/rsc/*.rsc.js', 'client/js/svc/*.svc.js', 'client/js/fty/*.fty.js', 'client/js/drt/*.drt.js'],
-        jsDest = 'client/script/';
+    var jsSrc = [clientDir + 'js/app.js', clientDir + 'js/ctrl/*.ctrl.js', clientDir + 'js/rsc/*.rsc.js', clientDir + 'js/svc/*.svc.js', clientDir + 'js/fty/*.fty.js', clientDir + 'js/drt/*.drt.js'],
+        jsDest = clientDir + 'script/';
 
     gulp.src(jsSrc)
-    // .pipe(sourcemaps.init())
+        .pipe(sourcemaps.init())
         .pipe(concat('app.js'))
         .pipe(babel({
             presets: ['es2015']
         }))
         .pipe(ngAnnotate())
         .pipe(uglify())
-        // .pipe(sourcemaps.write('../map/'))
+        .pipe(sourcemaps.write('../map/'))
         .pipe(gulp.dest(jsDest))
         .pipe(browserSync.reload({stream: true}));
 }
 
 function makeTemplate(filePath) {
 
-    var src = filePath || ['client/js/drt/*.html'],
-        dest = 'client/template/';
+    var src = filePath || [clientDir + 'js/drt/*.html'],
+        dest = clientDir + 'template/';
 
     gulp.src(src)
         .pipe(gulp.dest(dest))
@@ -69,13 +70,13 @@ function makeTemplate(filePath) {
 gulp.task('default', function () {
 
     browserSync.init({
-        startPath: 'client/index.html',
+        startPath: clientDir + 'index.html',
         server: {
             baseDir: './'
         }
     });
 
-    gulp.watch(['client/js/**/*', 'client/scss/*', 'client/index.html'], function (event) {
+    gulp.watch([clientDir + 'js/**/*', clientDir + 'scss/*', clientDir + 'index.html'], function (event) {
 
         var filePath = event.path;
         if (filePath.lastIndexOf('.scss') !== -1) {
