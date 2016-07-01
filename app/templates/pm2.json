@@ -1,0 +1,16 @@
+{
+  "name": "yx",
+  "script": "server/main.js",
+  "log_date_format": "YYYY-MM-DD HH:mm Z",
+  "error_file": "log/err.log",
+  "out_file": "log/std.log",
+  "pid_file": "log/yx.pid",
+  "watch": false,
+  "ignore_watch": [
+    "node_modules"
+  ],
+  "env": {
+    "NODE_ENV": "prod",
+    "NODE_PATH":"./server"
+  }
+}
