@@ -4,6 +4,7 @@ const compress = require('compression');
 const path = require('path');
 const settings = require('../settings');
 const morgan = require('morgan');
+const favicon = require('serve-favicon');
 
 
 module.exports = function () {
@@ -16,6 +17,7 @@ module.exports = function () {
     app.use("/node_modules", express.static(path.resolve(__dirname, '..', '..', 'node_modules')));
     app.use(express.static(path.resolve(__dirname, '..', '..', 'client')));
     app.use(morgan('tiny'));
+    app.use(favicon(path.resolve(__dirname, '..', '..', 'favicon.ico')));
 
     app.listen(app.get('port'), function () {
         console.log('app started.');
