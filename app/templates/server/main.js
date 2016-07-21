@@ -1,10 +1,10 @@
 require('./config/db')();
 
-var app = require('./config/middleware')();
+var app = require('./config/middleware-pre')();
 
 require('./router')(app);
 
-require('./config/errorHandler')(app);
+require('./config/middleware-post')(app);
 
 
 
