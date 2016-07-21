@@ -64,11 +64,10 @@ module.exports = Base.extend({
             return;
         } else if (!p || 'f' === p) {
             this.fs.copy(path.join(__dirname, 'templates'), '.');
-            this.spawnCommandSync('mkdir', ['log', 'client', 'client/image', 'client/js',
-                'client/map']);
+            this.spawnCommandSync('mkdir', ['log', 'client', 'client/js']);
         } else if ('c' === p) {
             this.fs.copy(path.join(__dirname, 'templates', 'client'), '.');
-            this.spawnCommandSync('mkdir', ['image', 'js', 'map']);
+            this.spawnCommandSync('mkdir', ['js']);
         }
         this.spawnCommandSync('touch', ['README.md']);
         this.initNpmConfig();

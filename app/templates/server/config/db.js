@@ -1,9 +1,10 @@
+"use strict";
 const mongoose = require('mongoose');
-
+const settings = require('../settings');
 
 module.exports = function () {
 
-    mongoose.connect('mongodb://localhost:27017/local');
+    mongoose.connect(settings.mongoDBUrl);
     mongoose.connection.once('open', function() {
 
         console.log('mongodb connected.');
