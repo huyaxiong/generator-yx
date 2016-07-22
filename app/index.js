@@ -69,7 +69,7 @@ module.exports = Base.extend({
             this.fs.copy(path.join(__dirname, 'templates', 'client'), '.');
             this.spawnCommandSync('mkdir', ['js']);
         }
-        this.spawnCommandSync('touch', ['README.md']);
+        this.spawnCommandSync('touch', ['README.md', '.gitignore']);
         this.initNpmConfig();
         cb();
     },
