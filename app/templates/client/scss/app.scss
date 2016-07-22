@@ -1,1 +1,9 @@
-@import "common";
+@import "framework";
+@import "util";
+
+
+body {
+  background-color: $ghost;
+  max-width: $large-breakpoint;
+  margin: auto;
+}
