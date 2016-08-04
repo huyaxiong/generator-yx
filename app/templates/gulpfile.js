@@ -11,6 +11,7 @@ const pxtorem = require('postcss-pxtorem');
 const postcssScss = require('postcss-scss');
 const browserSync = require('browser-sync').create();
 const clientDir = 'client/';
+const imagemin = require('gulp-imagemin');
 
 
 function makeCss() {
@@ -21,7 +22,7 @@ function makeCss() {
     gulp.src(scssSrc)
         .pipe(sourcemaps.init())
         .pipe(sass({
-            // includePaths: ['node_modules/materialize-css/sass', 'node_modules/susy/sass'],
+            // includePaths: ['node_modules/materialize-css/sass', 'node_modules/susy/sass', 'node_modules/foundation-sites/scss'],
             outputStyle: 'compressed'
         }).on('error', sass.logError))
         .pipe(postcss([autoprefixer({browsers: ['last 10 versions']})
@@ -66,6 +67,13 @@ function makeTemplate(filePath) {
         .pipe(gulp.dest(dest))
         .pipe(browserSync.reload({stream: true}));
 }
+
+gulp.task('img' ,function () {
+
+    gulp.src(clientDir + 'image/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('client/image-compressed'))
+});
 
 gulp.task('default', function () {
 

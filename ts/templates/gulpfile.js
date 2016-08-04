@@ -8,6 +8,7 @@ const autoprefixer = require('autoprefixer');
 const pxtorem = require('postcss-pxtorem');
 const postcssScss = require('postcss-scss');
 const browserSync = require('browser-sync').create();
+const imagemin = require('gulp-imagemin');
 
 
 function makeCss() {
@@ -48,6 +49,13 @@ gulp.task('vendor', function () {
         .pipe(concat('vendor.js'))
         .pipe(uglify({mangle:false}))
         .pipe(gulp.dest('client/script'));
+});
+
+gulp.task('img' ,function () {
+
+    gulp.src('client/image/*')
+        .pipe(imagemin())
+        .pipe(gulp.dest('client/image-compressed'))
 });
 
 gulp.task('css', function () {
