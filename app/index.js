@@ -39,9 +39,9 @@ module.exports = Base.extend({
 
     prompting: function () {
         
-        var frontendDeps = ['jquery@2.2.3', 'susy@2.2.12', 'foundation-sites@6.2.3', 'angular@1.4.9',
+        var frontendDeps = ["core-js@2.4.1", 'jquery@2.2.3', 'foundation-sites@6.2.3', 'susy@2.2.12', 'angular@1.4.9',
             'ui-route@0.2.18', 'angular-resource@1.4.9', 'angular-animate@1.4.9',
-            'gsap@1.18.2', 'popmotion@5.0.12', 'hammer.js@2.0.6', 'pixi.js@3.0.11'];
+            'gsap@1.18.2', 'hammer.js@2.0.6', 'pixi.js@3.0.11'];
         var cb = this.async();
         
         this.prompt({
@@ -83,7 +83,7 @@ module.exports = Base.extend({
         } else if (!p || 'f' === p) {
             var backendDeps = ['express@4.13.3', 'body-parser@1.14.2', 'compression@1.6.1', 'request@2.69.0',
                 'mongoose@4.4.4', 'node-uuid@1.4.7', 'moment@2.12.0', 'multer@1.1.0', 'morgan@1.7.0',
-                'serve-favicon@2.3.0', "co@4.6.0", "ip@1.1.3"];
+                'serve-favicon@2.3.0', "ip@1.1.3"];
             npmDeps = npmDeps.concat(backendDeps);
         }
         this.npmInstall(npmDeps, {'save': true});
