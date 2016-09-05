@@ -2,13 +2,11 @@
   "restartable": "rs",
   "ignore": [
     ".git",
-    "node_modules",
-    "client/ts",
-    "client/scss"
+    "node_modules"
   ],
   "verbose": true,
   "execMap": {
-    "js": ""
+    "js": "node server/main.js"
   },
   "events": {
     "restart": "osascript -e 'display notification \"App restarted due to:\n'$FILENAME'\" with title \"nodemon\"'"
@@ -18,8 +16,6 @@
     "client/"
   ],
   "env": {
-    "NODE_ENV": "prod",
-    "NODE_PATH":"./server"
   },
   "ext": "js json"
 }
