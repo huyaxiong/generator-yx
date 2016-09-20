@@ -8,7 +8,7 @@
     "sourceMap": false,
     "removeComments": true,
     "noImplicitAny": false,
-    "outFile": "client/script/app.js"
+    "outFile": "client/dist/app.js"
   },
   "exclude": [
     "node_modules",

@@ -1,7 +1,7 @@
 var generators = require('yeoman-generator');
 var path = require('path');
 var npmDeps = ['systemjs@0.19.27'];
-var npmDevDeps = ['typescript@1.8.9', 'typings@1.0.4'];
+var npmDevDeps = ['typescript@2.0.2', 'typings@1.0.4'];
 
 
 module.exports = generators.Base.extend({
