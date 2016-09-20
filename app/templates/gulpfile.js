@@ -17,7 +17,7 @@ const imagemin = require('gulp-imagemin');
 function makeCss() {
 
     var scssSrc = clientDir + 'scss/app.scss',
-        cssDest = clientDir + 'stylesheet/';
+        cssDest = clientDir + 'dist/';
 
     gulp.src(scssSrc)
         .pipe(sourcemaps.init())
@@ -43,7 +43,7 @@ function makeCss() {
 function makeJs() {
 
     var jsSrc = [clientDir + 'js/app.js', clientDir + 'js/ctrl/*.ctrl.js', clientDir + 'js/rsc/*.rsc.js', clientDir + 'js/svc/*.svc.js', clientDir + 'js/fty/*.fty.js', clientDir + 'js/drt/*.drt.js'],
-        jsDest = clientDir + 'script/';
+        jsDest = clientDir + 'dist/';
 
     gulp.src(jsSrc)
         .pipe(sourcemaps.init())
