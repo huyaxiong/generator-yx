@@ -11,6 +11,7 @@ const pxtorem = require('postcss-pxtorem');
 const postcssScss = require('postcss-scss');
 const browserSync = require('browser-sync').create();
 const imagemin = require('gulp-imagemin');
+const fontmin = require('gulp-fontmin');
 const clientDir = 'client/';
 
 
@@ -52,7 +53,12 @@ function makeJs() {
             presets: ['es2015']
         }))
         .pipe(ngAnnotate())
-        .pipe(uglify())
+        .pipe(uglify({
+            // mangle: false, 
+            // compress: {
+            //     pure_funcs: ['console.log', 'window.console.log.apply']
+            // }
+        }))
         .pipe(sourcemaps.write(jsDest))
         .pipe(gulp.dest(jsDest))
         .pipe(browserSync.reload({stream: true}));
@@ -72,7 +78,16 @@ gulp.task('img' ,function () {
 
     gulp.src(clientDir + 'image/*')
         .pipe(imagemin())
-        .pipe(gulp.dest(clientDir + 'image-compressed'))
+        .pipe(gulp.dest(clientDir + 'image/dist'))
+});
+
+gulp.task('font', function () {
+
+    gulp.src(clientDir + 'font/*')
+        .pipe(fontmin({
+            text: ''
+        }))
+        .pipe(gulp.dest(clientDir + 'font/dist'));
 });
 
 gulp.task('default', function () {
