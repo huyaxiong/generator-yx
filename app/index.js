@@ -67,6 +67,7 @@ module.exports = Base.extend({
             this.spawnCommandSync('mkdir', ['log', 'client', 'client/js']);
         } else if ('c' === p) {
             this.fs.copy(path.join(__dirname, 'templates', 'client'), '.');
+            this.fs.copy(path.join(__dirname, 'templates', 'gulpfile.js'), '.');
             this.spawnCommandSync('mkdir', ['js']);
         }
         this.spawnCommandSync('touch', ['README.md', '.gitignore']);
