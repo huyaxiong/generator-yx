@@ -1,0 +1,15 @@
+{
+  "presets": [
+    "es2017",
+    "node6"
+  ],
+  "plugins": [
+    "transform-runtime",
+    [
+      "babel-project-relative-import",
+      {
+        "sourceDir": "server"
+      }
+    ]
+  ]
+}

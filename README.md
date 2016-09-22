@@ -18,12 +18,12 @@
 - babel
 
 # Guide
-- yo yx f (full stack, default)
-- yo yx c (only client side)
+- yo yx (default only frontend)
+- yo yx:server (add backend codes)
 - yo yx:ng xxx (install angular dependencies)
 - yo yx:ngMod xxx (generate angular module)
 - yo yx:ngCtrl xxx (generate angular controller)
 - yo yx:ngFty xxx (generate angular factory)
 - yo yx:ngSvc xxx (generate angular service)
 - yo yx:ngDrt xxx (generate angular directive)
-- yo yx:ts (add ts config file)
+- yo yx:ts (add ts configure files)
