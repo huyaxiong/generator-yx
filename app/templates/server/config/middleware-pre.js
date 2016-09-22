@@ -15,7 +15,8 @@ module.exports = function () {
     app.use(bodyParser.json({limit: '10mb'}));
     app.use(bodyParser.urlencoded({limit: '10mb', extended: true}));
     app.use("/node_modules", express.static(path.resolve(__dirname, '..', '..', 'node_modules')));
-    app.use(express.static(path.resolve(__dirname, '..', '..', 'client')));
+    app.use("/image", express.static(path.resolve(__dirname, '..', '..', 'image')));
+    app.use("/dist", express.static(path.resolve(__dirname, '..', '..', 'dist')));
     app.use(morgan('tiny'));
     app.use(favicon(path.resolve(__dirname, '..', '..', 'favicon.ico')));
 

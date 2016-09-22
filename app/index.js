@@ -62,9 +62,9 @@ module.exports = Base.extend({
             return;
         } else if (!p || 'f' === p) {
             this.fs.copy(path.join(__dirname, 'templates'), '.');
-            this.spawnCommandSync('mkdir', ['log', 'client', 'client/js']);
+            this.spawnCommandSync('mkdir', ['log', 'js']);
         } else if ('c' === p) {
-            this.fs.copy(path.join(__dirname, 'templates', 'client'), '.');
+            this.fs.copy(path.join(__dirname, 'templates'), '.');
             this.fs.copy(path.join(__dirname, 'templates', 'gulpfile.js'), '.');
             this.spawnCommandSync('mkdir', ['js']);
         }

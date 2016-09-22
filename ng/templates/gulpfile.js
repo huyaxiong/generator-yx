@@ -12,7 +12,7 @@ const postcssScss = require('postcss-scss');
 const browserSync = require('browser-sync').create();
 const imagemin = require('gulp-imagemin');
 const fontmin = require('gulp-fontmin');
-const clientDir = 'client/';
+const clientDir = './';
 
 
 function makeCss() {

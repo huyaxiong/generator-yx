@@ -4,12 +4,12 @@ module.exports = function (app) {
 
     app.get('/', function (req, res) {
 
-        res.sendFile('index.html');
+        res.sendFile(path.resolve(__dirname, '..', '..', 'index.html'));
     });
 
     app.get('/404', function (req, res) {
 
-        res.sendFile(path.resolve(__dirname, '..', '..', 'client', '404.html'));
+        res.sendFile(path.resolve(__dirname, '..', '..', '404.html'));
     });
 
     app.use(function (req, res) {

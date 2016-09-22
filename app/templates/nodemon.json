@@ -3,8 +3,9 @@
   "ignore": [
     ".git",
     "node_modules",
-    "client/ts",
-    "client/scss"
+    "ts",
+    "js",
+    "scss"
   ],
   "verbose": true,
   "execMap": {
@@ -15,7 +16,8 @@
   },
   "watch": [
     "server/",
-    "client/"
+    "dist/",
+    "image/"
   ],
   "env": {
     "NODE_ENV": "prod",
