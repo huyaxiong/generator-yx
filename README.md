@@ -1,7 +1,6 @@
 # Tech
 
 ## Front
-- compass
 - susy
 - foundation 
 - angular
