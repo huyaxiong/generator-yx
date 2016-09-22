@@ -5,7 +5,7 @@
 - susy
 - foundation 
 - angular
-- createjs
+- pixi
 - gsap
 
 ## Backend
@@ -14,7 +14,6 @@
 - mongoose
 
 ## Tool
-- bower
 - gulp
 - nodemon
 - babel
@@ -22,7 +21,7 @@
 # Guide
 - yo yx f (full stack, default)
 - yo yx c (only client side)
-- yo yx:h xxx (generate html)
+- yo yx:ng xxx (install angular dependencies)
 - yo yx:ngMod xxx (generate angular module)
 - yo yx:ngCtrl xxx (generate angular controller)
 - yo yx:ngFty xxx (generate angular factory)

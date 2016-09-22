@@ -3,7 +3,7 @@ var Base = generators.Base;
 var path = require('path');
 var npmDeps = [];
 var npmDevDeps = ['gulp@3.8.11', 'gulp-babel@6.1.2', 'gulp-uglify@1.1.0',
-    'gulp-concat@2.5.2', 'gulp-sourcemaps@1.5.0', 'gulp-ng-annotate@2.0.0',
+    'gulp-concat@2.5.2', 'gulp-sourcemaps@1.5.0',
     'gulp-postcss@6.1.0', 'gulp-sass@2.2.0', 'gulp-fontmin@0.7.4',
     'gulp-imagemin@3.0.2', 'babel-preset-es2015@6.6.0',
     'autoprefixer@6.3.3', 'postcss-scss@0.1.6', 'postcss-pxtorem@3.3.1',
@@ -20,8 +20,7 @@ module.exports = Base.extend({
             "description": "",
             "main": "server/main.js",
             "scripts": {
-                "start": "NODE_PATH=./server node server/main.js",
-                "test": ""
+                "start": "node ./server/main.js --debug",
             },
             "author": "",
             "license": "ISC",
@@ -39,8 +38,7 @@ module.exports = Base.extend({
 
     prompting: function () {
 
-        var frontendDeps = ["core-js@2.4.1", 'jquery@2.2.3', 'foundation-sites@6.2.3', 'susy@2.2.12', 'angular@1.4.9',
-            'ui-route@0.2.18', 'angular-resource@1.4.9', 'angular-animate@1.4.9',
+        var frontendDeps = ["core-js@2.4.1", 'jquery@2.2.3', 'foundation-sites@6.2.3', 'susy@2.2.12', 
             'gsap@1.18.2', 'hammer.js@2.0.6', 'pixi.js@3.0.11'];
         var cb = this.async();
 
@@ -68,7 +66,6 @@ module.exports = Base.extend({
         } else if ('c' === p) {
             this.fs.copy(path.join(__dirname, 'templates', 'client'), '.');
             this.fs.copy(path.join(__dirname, 'templates', 'gulpfile.js'), '.');
-            this.fs.copy(path.join(__dirname, 'templates', 'gulpfile-regular.js'), '.');
             this.spawnCommandSync('mkdir', ['js']);
         }
         this.spawnCommandSync('touch', ['README.md', '.gitignore']);

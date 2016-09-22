@@ -1,7 +1,6 @@
 const gulp = require('gulp');
 const concat = require('gulp-concat');
 const sourcemaps = require('gulp-sourcemaps');
-const ngAnnotate = require('gulp-ng-annotate');
 const babel = require('gulp-babel');
 const uglify = require('gulp-uglify');
 const sass = require('gulp-sass');
@@ -21,7 +20,7 @@ function makeCss() {
         cssDest = clientDir + 'dist/';
 
     gulp.src(scssSrc)
-        .pipe(sourcemaps.init())
+        // .pipe(sourcemaps.init())
         .pipe(sass({
             // includePaths: ['node_modules/materialize-css/sass', 'node_modules/susy/sass', 'node_modules/foundation-sites/scss'],
             outputStyle: 'compressed'
@@ -33,44 +32,33 @@ function makeCss() {
             //     propWhiteList: []
             // })
         ], {syntax: postcssScss}))
-        .pipe(sourcemaps.write(cssDest, {
-            includeContent: false,
-            sourceRoot: '../scss/'
-        }))
+        // .pipe(sourcemaps.write(cssDest, {
+        //     includeContent: false,
+        //     sourceRoot: '../scss/'
+        // }))
         .pipe(gulp.dest(cssDest))
         .pipe(browserSync.reload({stream: true}));
 }
 
 function makeJs() {
 
-    var jsSrc = [clientDir + 'js/app.js', clientDir + 'js/ctrl/*.ctrl.js', clientDir + 'js/rsc/*.rsc.js', clientDir + 'js/svc/*.svc.js', clientDir + 'js/fty/*.fty.js', clientDir + 'js/drt/*.drt.js'],
+    var jsSrc = [clientDir + 'js/**/*'],
         jsDest = clientDir + 'dist/';
 
     gulp.src(jsSrc)
-        .pipe(sourcemaps.init())
+        // .pipe(sourcemaps.init())
         .pipe(concat('app.js'))
         .pipe(babel({
             presets: ['es2015']
         }))
-        .pipe(ngAnnotate())
         .pipe(uglify({
-            // mangle: false, 
+            // mangle: false,
             // compress: {
             //     pure_funcs: ['console.log', 'window.console.log.apply']
             // }
         }))
-        .pipe(sourcemaps.write(jsDest))
+        // .pipe(sourcemaps.write(jsDest))
         .pipe(gulp.dest(jsDest))
-        .pipe(browserSync.reload({stream: true}));
-}
-
-function makeTemplate(filePath) {
-
-    var src = filePath || [clientDir + 'js/drt/*.html'],
-        dest = clientDir + 'template/';
-
-    gulp.src(src)
-        .pipe(gulp.dest(dest))
         .pipe(browserSync.reload({stream: true}));
 }
 
@@ -106,8 +94,6 @@ gulp.task('default', function () {
             makeCss();
         } else if (filePath.lastIndexOf('.js') !== -1) {
             makeJs();
-        } else if (filePath.lastIndexOf('.drt.html') !== -1) {
-            makeTemplate(filePath);
         } else {
             browserSync.reload();
         }
@@ -118,5 +104,4 @@ gulp.task('build', function () {
 
     makeCss();
     makeJs();
-    makeTemplate();
 });
