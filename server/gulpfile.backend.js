@@ -30,7 +30,7 @@ function makeBackend() {
 
 gulp.task('backend', function () {
 
-    gulp.watch(['backend/*'], function (event) {
+    gulp.watch(['backend/**/*'], function (event) {
 
         makeBackend();
     });

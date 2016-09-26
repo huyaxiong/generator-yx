@@ -4,6 +4,7 @@ import settings from '~/settings';
 
 export default function connectDB() {
 
+    mongoose.Promise = global.Promise;
     mongoose.connect(settings.mongoDBUrl);
     mongoose.connection.once('open', function () {
 
