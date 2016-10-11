@@ -22,7 +22,7 @@ function makeCss() {
     gulp.src(scssSrc)
         // .pipe(sourcemaps.init())
         .pipe(sass({
-            // includePaths: ['node_modules/materialize-css/sass', 'node_modules/susy/sass', 'node_modules/foundation-sites/scss'],
+            // includePaths: ['node_modules/materialize-css/sass', 'node_modules/susy/sass', 'node_modules/foundation-sites/scss', 'node_modules/font-awesome/scss'],
             outputStyle: 'compressed'
         }).on('error', sass.logError))
         .pipe(postcss([autoprefixer({browsers: ['last 10 versions']})
