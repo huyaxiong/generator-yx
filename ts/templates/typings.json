@@ -1,8 +1,0 @@
-{
-  "globalDependencies": {
-    "core-js": "registry:dt/core-js#0.0.0+20160725163759",
-    "foundation-sites": "registry:dt/foundation-sites#6.1.1+20160317120654",
-    "jquery": "registry:dt/jquery#1.10.0+20160417213236",
-    "socket.io-client": "registry:dt/socket.io-client#1.4.4+20160317120654"
-  }
-}
