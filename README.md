@@ -27,3 +27,15 @@
 - yo yx:ngSvc xxx (generate angular service)
 - yo yx:ngDrt xxx (generate angular directive)
 - yo yx:ts (add ts configure files)
+
+# Project Structure
+
+    -Project    
+        -js (frontend source js code)
+        -dist (frontend compiled js & css code)
+        -backend (backend source js code)
+        -server (backend compiled js code)
+        -gulpfile.js
+        -index.html
+        -package.json
+

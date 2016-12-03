@@ -1,7 +1,36 @@
 $ghost: #FAFAFA;
-$large-breakpoint: 1200px;
 
 ul {
   list-style: none;
   margin: 0;
 }
+
+$breakpoints: (
+        small: 0,
+        medium: 640px,
+        large: 1024px,
+        xlarge: 1200px,
+        xxlarge: 1440px,
+);
+
+$susy: (
+        global-box-sizing: border-box,
+        gutters: 0,
+        columns: 24,
+        output:isolate,
+        container: map-get($breakpoints, 'xlarge')
+);
+
+$susy-mobile: (
+        global-box-sizing: border-box,
+        gutters: 0,
+        columns: 64,
+        output:isolate,
+        container: map-get($breakpoints, 'medium'),
+);
+
+$desktop: "only screen and (min-width:#{map-get($breakpoints, 'xlarge')})";
+$mobile: "only screen and (max-width:#{map-get($breakpoints, 'medium')})";
+
+//$fa-font-path:"/node_modules/font-awesome/fonts";
+

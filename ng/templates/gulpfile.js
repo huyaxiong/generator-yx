@@ -23,7 +23,7 @@ function makeCss() {
     gulp.src(scssSrc)
         .pipe(sourcemaps.init())
         .pipe(sass({
-            // includePaths: ['node_modules/materialize-css/sass', 'node_modules/susy/sass', 'node_modules/foundation-sites/scss'],
+            // includePaths: ['node_modules/materialize-css/sass', 'node_modules/susy/sass', 'node_modules/foundation-sites/scss', 'node_modules/font-awesome/scss'],
             outputStyle: 'compressed'
         }).on('error', sass.logError))
         .pipe(postcss([autoprefixer({browsers: ['last 10 versions']})
@@ -74,20 +74,30 @@ function makeTemplate(filePath) {
         .pipe(browserSync.reload({stream: true}));
 }
 
-gulp.task('img' ,function () {
+function makeImage() {
 
     gulp.src(clientDir + 'image/*')
         .pipe(imagemin())
         .pipe(gulp.dest(clientDir + 'image/dist'))
-});
+}
 
-gulp.task('font', function () {
+function makeFont() {
 
     gulp.src(clientDir + 'font/*')
         .pipe(fontmin({
             text: ''
         }))
         .pipe(gulp.dest(clientDir + 'font/dist'));
+}
+
+gulp.task('img' ,function () {
+
+    makeImage();
+});
+
+gulp.task('font', function () {
+
+    makeFont();
 });
 
 gulp.task('default', function () {
@@ -112,11 +122,4 @@ gulp.task('default', function () {
             browserSync.reload();
         }
     });
-});
-
-gulp.task('build', function () {
-
-    makeCss();
-    makeJs();
-    makeTemplate();
 });

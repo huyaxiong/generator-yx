@@ -1,12 +1,12 @@
 {
   "restartable": "rs",
-  "ignore": [
-    ".git",
-    "node_modules",
-    "ts",
-    "js",
-    "scss"
-  ],
+//  "ignore": [
+//    ".git",
+//    "node_modules",
+//    "ts",
+//    "js",
+//    "scss"
+//  ],
   "verbose": true,
   "execMap": {
     "js": ""
