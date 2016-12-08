@@ -16,11 +16,12 @@ const clientDir = './';
 
 function makeCss() {
 
-    var scssSrc = clientDir + 'scss/app.scss',
+    var scssSrc = clientDir + 'scss/main.scss',
         cssDest = clientDir + 'dist/';
 
     gulp.src(scssSrc)
         // .pipe(sourcemaps.init())
+        .pipe(concat('app.scss'))
         .pipe(sass({
             // includePaths: ['node_modules/materialize-css/sass', 'node_modules/susy/sass', 'node_modules/foundation-sites/scss', 'node_modules/font-awesome/scss'],
             outputStyle: 'compressed'
@@ -35,7 +36,7 @@ function makeCss() {
         // .pipe(sourcemaps.write(cssDest, {
         //     includeContent: false,
         //     sourceRoot: '../scss/'
-        // }))
+        // })))
         .pipe(gulp.dest(cssDest))
         .pipe(browserSync.reload({stream: true}));
 }

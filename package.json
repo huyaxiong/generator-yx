@@ -1,11 +1,7 @@
 {
   "name": "generator-yx",
-<<<<<<< HEAD
-  "version": "1.5.9",
-=======
-  "version": "1.6.2",
->>>>>>> b1f75eb66f5ce5b3e2fe5ca11cac0a7004c292ab
-  "description": "front & backend skeleton, angular#1.4.9 toolkit, includes babel, autoprefixer, gulp, express..",
+  "version": "1.6.6",
+  "description": "front & backend skeleton",
   "main": "app/index.js",
   "dependencies": {
     "lodash": "^4.0.0",
