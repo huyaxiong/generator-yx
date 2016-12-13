@@ -60,24 +60,32 @@ module.exports = {
             'normalize': 'normalize.css/normalize.css'
         }
     },
+    devtool: 'cheap-module-eval-source-map',
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
             name: "vendor",
             filename: "vendor.js",
             minChunks: Infinity
         }),
-        // new webpack.optimize.UglifyJsPlugin({
-        //     compress: {
-        //         warnings: true
-        //     },
-        //     mangle: false,
-        //     compress: {
-        //         pure_funcs: ['console.log', 'window.console.log.apply']
-        //     }
-        // }),
         new webpack.optimize.OccurrenceOrderPlugin(),
         new HtmlWebpackPlugin({
             template: 'index.html'
         })
     ]
 };
+
+if (process.env.NODE_ENV === 'prod') {
+
+    module.exports.devtool = false;
+    module.exports.plugins = (module.exports.plugins || []).concat([
+        new webpack.optimize.UglifyJsPlugin({
+            compress: {
+                warnings: false
+            },
+            // mangle: false,
+            compress: {
+                pure_funcs: ['console.log', 'window.console.log.apply']
+            }
+        })
+    ])
+}
