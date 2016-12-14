@@ -7,7 +7,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
 
     entry: {
-        vendor: ['normalize'],
+        // vendor: ['normalize'],
         app: ['./js/main.js', './scss/main.scss']
     },
     output: {
@@ -57,16 +57,16 @@ module.exports = {
     },
     resolve: {
         alias: {
-            'normalize': 'normalize.css/normalize.css'
+            'jquery$': 'jquery/dist/jquery.min.js'
         }
     },
     devtool: 'cheap-module-eval-source-map',
     plugins: [
-        new webpack.optimize.CommonsChunkPlugin({
-            name: "vendor",
-            filename: "vendor.js",
-            minChunks: Infinity
-        }),
+        // new webpack.optimize.CommonsChunkPlugin({
+        //     name: "vendor",
+        //     filename: "vendor.js",
+        //     minChunks: Infinity
+        // }),
         new webpack.optimize.OccurrenceOrderPlugin(),
         new HtmlWebpackPlugin({
             template: 'index.html',
