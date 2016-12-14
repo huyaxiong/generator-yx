@@ -16,7 +16,7 @@ module.exports = Base.extend({
             "scripts": {
                 "start": "node ./server/main.js --debug",
                 "watch": "webpack-dev-server --open -w",
-                "build": "cross-env NODE_ENV=prod webpack"
+                "build": "cross-env NODE_ENV=prod webpack --progress"
             },
             "author": "",
             "license": "ISC",

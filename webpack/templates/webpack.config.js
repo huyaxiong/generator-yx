@@ -69,7 +69,8 @@ module.exports = {
         }),
         new webpack.optimize.OccurrenceOrderPlugin(),
         new HtmlWebpackPlugin({
-            template: 'index.html'
+            template: 'index.html',
+            inject: 'head'
         })
     ]
 };

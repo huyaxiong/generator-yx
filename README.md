@@ -1,3 +1,7 @@
+# Subject
+
+Dont use it, just dont use it.
+
 # Guide
 
 - yo yx (default only frontend)
@@ -18,12 +22,12 @@
 # Project Structure
 
     -Project    
-        -js (frontend source js code)
-        -scss (frontend source scss code)
-        -dist (frontend compiled js & css code)
-        -backend (backend source js code)
-        -server (backend compiled js code)
-        -gulpfile.js
+        -js (frontend js source code)
+        -images (frontend images)
+        -scss (frontend scss source code)
+        -dist (frontend js & css compiled code)
+        -backend (backend js source code)
+        -server (backend js compiled code)
         -index.html
         -package.json
 
