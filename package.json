@@ -1,6 +1,6 @@
 {
   "name": "generator-yx",
-  "version": "1.6.8",
+  "version": "1.6.9",
   "description": "front & backend skeleton",
   "main": "app/index.js",
   "dependencies": {

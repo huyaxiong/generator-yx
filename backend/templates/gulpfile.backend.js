@@ -2,7 +2,7 @@ const gulp = require('gulp');
 const babel = require('gulp-babel');
 
 
-function makeBackend(filePath, fileName) {
+function makeBackendJS(filePath, fileName) {
 
     var backendSrc = fileName ? 'backend/' + filePath + fileName : 'backend/**/*.js',
         backendDest = fileName ? 'server/' + filePath : 'server/';
@@ -34,14 +34,21 @@ function makeBackendJSON() {
 
 gulp.task('backend', function () {
 
+    makeBackendJS();
+    makeBackendJSON();
+});
+
+gulp.task('default', function () {
+
     gulp.watch(['backend/**/*.js', 'backend/**/*.json'], function (event) {
 
-        if (event.path.lastIndexOf('.json') !== -1) {
+        var filePath = event.path;
+        if (event.path.indexOf('backend') !== -1 && event.path.lastIndexOf('.json') !== -1) {
             makeBackendJSON()
-        } else {
+        } else if (event.path.indexOf('backend') !== -1 && event.path.lastIndexOf('.js') !== -1) {
             let filePath = event.path.slice(event.path.lastIndexOf('backend/') + 'backend/'.length, event.path.lastIndexOf('/') + 1);
             let fileName = event.path.slice(event.path.lastIndexOf('/') + 1);
-            makeBackend(filePath, fileName);
+            makeBackendJS(filePath, fileName);
         }
     });
 });
