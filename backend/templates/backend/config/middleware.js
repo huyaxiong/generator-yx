@@ -1,7 +1,6 @@
 import {static as staticDir} from 'express';
 import favicon from 'serve-favicon';
 import bodyParser from 'body-parser';
-import xmlparser from 'express-xml-bodyparser';
 import compress from 'compression';
 import path from 'path';
 import settings from '~/settings';
@@ -13,10 +12,6 @@ export function useMiddlewaresPre(app) {
     app.set('port', process.env.PORT || settings.port);
     app.use(compress());
     app.use(bodyParser.json({limit: '10mb'}));
-    app.use(xmlparser({
-        explicitArray: false,
-        normalizeTags: false
-    }));
     app.use(bodyParser.urlencoded({limit: '10mb', extended: true}));
     app.use("/node_modules", staticDir(path.resolve(__dirname, '..', '..', 'node_modules')));
     app.use("/image", staticDir(path.resolve(__dirname, '..', '..', 'image')));
