@@ -36,7 +36,6 @@ module.exports = {
             {
                 test: /\.css$/,
                 use: [
-
                     "style-loader", "css-loader"
                 ]
             },
@@ -80,11 +79,9 @@ if (process.env.NODE_ENV === 'prod') {
     module.exports.devtool = false;
     module.exports.plugins = (module.exports.plugins || []).concat([
         new webpack.optimize.UglifyJsPlugin({
-            compress: {
-                warnings: false
-            },
             // mangle: false,
             compress: {
+                warnings: false
                 pure_funcs: ['console.log', 'window.console.log.apply']
             }
         })
