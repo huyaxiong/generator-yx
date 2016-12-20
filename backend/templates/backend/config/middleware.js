@@ -5,6 +5,8 @@ import compress from 'compression';
 import path from 'path';
 import settings from '~/settings';
 import morgan from 'morgan';
+import sessionMiddleware from './session';
+import cors from 'cors';
 
 
 export function useMiddlewaresPre(app) {
@@ -20,6 +22,8 @@ export function useMiddlewaresPre(app) {
     app.use("/dist", staticDir(path.resolve(__dirname, '..', '..', 'dist')));
     app.use(morgan('tiny'));
     app.use(favicon(path.resolve(__dirname, '..', '..', 'favicon.ico')));
+    app.use(sessionMiddleware);
+    app.use(cors());
 
     app.listen(app.get('port'), function () {
         console.log('express started.');
