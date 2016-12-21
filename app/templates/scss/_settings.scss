@@ -1,9 +1,7 @@
 $ghost: #FAFAFA;
-
-ul {
-  list-style: none;
-  margin: 0;
-}
+$pink: #f06292;
+$blue: #2199e8;
+$green: #AAFD6A;
 
 $breakpoints: (
         small: 0,
@@ -38,3 +36,8 @@ $mobile: "only screen and (max-width:#{map-get($breakpoints, 'medium')})";
 //  font-family: "Architects Daughter";
 //  src: url("../fonts/ArchitectsDaughter.ttf");
 //}
+
+ul {
+  list-style: none;
+  margin: 0;
+}
