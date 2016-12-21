@@ -7,8 +7,7 @@
                 <a>{{u.name}}</a>
             </li>
         </ul>
-        <router-link to="/user/4343">3434</router-link>
-        <a @click="query">click me</a>
+        <a @click="linkTo('user/hugh')">Hugh</a>
     </div>
 
 </template>
@@ -18,6 +17,8 @@
 
     import {mapActions} from 'vuex'
     import {USER_QUERY} from '../store/user.type'
+    import * as axios from 'axios';
+    import router from '../router';
 
 
     export default {
@@ -28,14 +29,27 @@
         },
         methods: {
             query: function () {
-                this.$store.dispatch(USER_QUERY, [{name: '111'}, {name: '222'}])
-
+                this.$store.dispatch(USER_QUERY, [{name: '111'}, {name: '222'}]);
+//                axios.get('')
+//                        .then((res) => {
+//                            this.userList = res.data;
+//                        })
+//                        .catch((err) => {
+//                            console.log(err);
+//                        });
+            },
+            linkTo(path) {
+                router.push(path);
             }
         },
         computed: {
             userList(){
                 return this.$store.state.user.userList;
             }
+        },
+        created() {
+
+            this.query();
         }
     }
 </script>

@@ -32,5 +32,9 @@ $susy-mobile: (
 $desktop: "only screen and (min-width:#{map-get($breakpoints, 'xlarge')})";
 $mobile: "only screen and (max-width:#{map-get($breakpoints, 'medium')})";
 
-//$fa-font-path:"/node_modules/font-awesome/fonts";
+//$fa-font-path:"~/node_modules/font-awesome/fonts";
 
+//@font-face {
+//  font-family: "Architects Daughter";
+//  src: url("../fonts/ArchitectsDaughter.ttf");
+//}
