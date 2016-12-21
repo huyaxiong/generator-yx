@@ -7,7 +7,7 @@ var HtmlWebpackPlugin = require('html-webpack-plugin');
 module.exports = {
 
     entry: {
-        // vendor: ['normalize'],
+        // vendor: ['jquery'],
         app: ['./js/main.js', './scss/main.scss']
     },
     output: {
@@ -49,7 +49,7 @@ module.exports = {
     },
     resolve: {
         alias: {
-            'jquery$': 'jquery/dist/jquery.min.js'
+            'jquery': 'jquery/dist/jquery.min.js'
         }
     },
     devtool: 'cheap-module-eval-source-map',
@@ -73,8 +73,9 @@ if (process.env.NODE_ENV === 'prod') {
     module.exports.plugins = (module.exports.plugins || []).concat([
         new webpack.optimize.UglifyJsPlugin({
             // mangle: false,
+            comments: false,
             compress: {
-                warnings: false
+                warnings: false,
                 pure_funcs: ['console.log', 'window.console.log.apply']
             }
         })

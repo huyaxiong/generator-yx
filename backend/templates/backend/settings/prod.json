@@ -1,8 +1,4 @@
 {
-  "port": 3333,
-  "mongoDBUrl": "mongodb://localhost:27017/user",
-  "project": {
-    "path": "",
-    "url": ""
-  }
+  "port": 3336,
+  "mongoDBUrl": "mongodb://yx:19900905@wechat.pageguy.tech:27017/test"
 }
