@@ -4,6 +4,7 @@ var path = require('path');
 var npmDevDeps = ["autoprefixer@^6.5.3",
     "babel-loader@^6.2.8",
     "babel-preset-es2015@^6.6.0",
+    "babel-plugin-transform-runtime@^6.15.0",
     "css-loader@^0.26.1",
     "file-loader@^0.9.0",
     "html-webpack-plugin@^2.24.1",
