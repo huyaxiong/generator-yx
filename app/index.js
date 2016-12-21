@@ -14,11 +14,13 @@ module.exports = Base.extend({
             "description": "",
             "main": "server/main.js",
             "scripts": {
-                "start": "node ./server/main.js --debug",
-                "watch": "webpack-dev-server --open -w",
-                "build": "cross-env NODE_ENV=prod webpack --progress"
+                "wf": "cross-env NODE_ENV=dev ./node_modules/.bin/webpack-dev-server -w",
+                "bf": "cross-env NODE_ENV=prod ./node_modules/.bin/webpack --progress",
+                "wb": "gulp --gulpfile gulpfile.backend.js",
+                "bb": "gulp --gulpfile gulpfile.backend.js backend",
+                "start": "node ./server/main.js --debug"
             },
-            "author": "",
+            "author": "Hugh",
             "license": "ISC",
             "dependencies": {},
             "devDependencies": {}
@@ -34,7 +36,7 @@ module.exports = Base.extend({
 
     prompting: function () {
 
-        var frontendDeps = ['jquery@2.2.3', 'normalize.css@^5.0.0', 'susy@2.2.12', 'foundation-sites@6.2.3', "core-js@2.4.1"];
+        var frontendDeps = ['normalize.css@^5.0.0', 'jquery@2.2.3', 'susy@2.2.12', 'foundation-sites@6.2.3'];
         var cb = this.async();
 
         this.prompt({

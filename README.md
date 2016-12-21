@@ -1,34 +1,46 @@
 # Subject
 
-Dont use it, just dont use it.
+Full stack javascript project scaffold, including vue, webpack, gulp, babel, express ...
+
 
 # Guide
 
-- yo yx (default only frontend)
-- yo yx:backend (add backend codes with babel build-in)
+### Suggest To Use
+
+- yo yx (new frontend project)
+- yo yx:vue (install vue 2 dependencies)
+- yo yx:v (generate vue file)
+- yo yx:gulp (add gulp configure files)
+- yo yx:webpack (add webpack configure files)
 - yo yx:backend (add backend codes)
+
+
+### About To Deprecate
 - yo yx:ng xxx (install angular 1.4 dependencies)
 - yo yx:ngMod xxx (generate angular module)
 - yo yx:ngCtrl xxx (generate angular controller)
 - yo yx:ngFty xxx (generate angular factory)
 - yo yx:ngSvc xxx (generate angular service)
 - yo yx:ngDrt xxx (generate angular directive)
-- yo yx:vue (install vue 2 dependencies)
-- yo yx:v (generate vue file)
-- yo yx:gulp (add gulp configure files)
-- yo yx:webpack (add webpack configure files)
 - yo yx:ts (add ts configure files)
+- yo yx:backend-commonjs (add backend codes of commonjs version)
+- yo yx:mini-app (generate wechat mini-app files)
 
 
-# Project Structure
+# Basic Project Structure
 
     -Project    
-        -js (frontend js source code)
-        -images (frontend images)
-        -scss (frontend scss source code)
-        -dist (frontend js & css compiled code)
-        -backend (backend js source code)
-        -server (backend js compiled code)
+        -js (containing source js code of frontend)
+        -images (containing images)
+        -scss (containing source scss code of frontend)
+        -dist (containing compiled js & css code of frontend)
+        -backend (containing source js code of backend)
+        -server (containing compiled js code of backend)
         -index.html
         -package.json
+        
+        
+# Contact
 
+Hugh Hu
+hughyaxiong@gmail.com

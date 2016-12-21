@@ -16,9 +16,9 @@ export function useMiddlewaresPre(app) {
     app.use(bodyParser.json({limit: '10mb'}));
     app.use(bodyParser.urlencoded({limit: '10mb', extended: true}));
     app.use("/node_modules", staticDir(path.resolve(__dirname, '..', '..', 'node_modules')));
-    app.use("/image", staticDir(path.resolve(__dirname, '..', '..', 'image')));
-    app.use("/music", staticDir(path.resolve(__dirname, '..', '..', 'music')));
-    app.use("/font", staticDir(path.resolve(__dirname, '..', '..', 'font')));
+    app.use("/image", staticDir(path.resolve(__dirname, '..', '..', 'images')));
+    app.use("/music", staticDir(path.resolve(__dirname, '..', '..', 'musics')));
+    app.use("/font", staticDir(path.resolve(__dirname, '..', '..', 'fonts')));
     app.use("/dist", staticDir(path.resolve(__dirname, '..', '..', 'dist')));
     app.use(morgan('tiny'));
     app.use(favicon(path.resolve(__dirname, '..', '..', 'favicon.ico')));

@@ -1,7 +1,7 @@
 {
   "name": "generator-yx",
-  "version": "1.6.10",
-  "description": "front & backend skeleton",
+  "version": "1.7.0",
+  "description": "Full stack javascript project scaffold.",
   "main": "app/index.js",
   "dependencies": {
     "lodash": "^4.0.0",

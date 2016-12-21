@@ -1,4 +1,4 @@
 {
   "port": 3336,
-  "mongoDBUrl": "mongodb://yx:19900905@wechat.pageguy.tech:27017/test"
+  "mongoDBUrl": "mongodb://yx:19900905@yaxiong.me:27017/test"
 }
