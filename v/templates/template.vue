@@ -28,6 +28,9 @@
         },
         created() {
 
+        },
+        destroyed() {
+
         }
     }
 
