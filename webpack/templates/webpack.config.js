@@ -33,11 +33,15 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(png|jpg|gif|svg|ttf)$/,
+                test: /\.(ttf)$/,
                 loader: 'file-loader',
                 options: {
                     name: '[name].[ext]?[hash]'
                 }
+            },
+            {
+                test: /\.(png|jpg)$/,
+                loader: 'url-loader'
             },
             {
                 test: /\.scss$/,
@@ -76,7 +80,7 @@ if (process.env.NODE_ENV === 'prod') {
             comments: false,
             compress: {
                 warnings: false,
-                pure_funcs: ['console.log', 'window.console.log.apply']
+                pure_funcs: ['console.log', 'console.warn', 'window.console.log.apply']
             }
         })
     ])
