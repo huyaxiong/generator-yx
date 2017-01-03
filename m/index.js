@@ -1,4 +1,5 @@
 var generators = require('yeoman-generator');
+var _ = require('lodash');
 
 
 module.exports = generators.Base.extend({
@@ -15,7 +16,8 @@ module.exports = generators.Base.extend({
             this.templatePath('template.test.js'),
             this.destinationPath(this.p + '.test.js'),
             {
-                name: this.p
+                name: this.p,
+                capitalizedName: _.capitalize(this.p)
             }
         );
     }
