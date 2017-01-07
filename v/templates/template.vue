@@ -1,34 +1,45 @@
 <template>
 
-    <div>
+<div>
 
-    </div>
+</div>
 
 </template>
 
 
 <script>
 
-//    import * as axios from 'axios';
+import axios from 'axios';
 
 
-    export default {
-        data () {
-            return {
-
-            }
-        },
-        methods: {
-            query() {
-
-            }
-        },
-        computed: {
-
-        },
-        created() {
+export default {
+    data () {
+        return {}
+    },
+    methods: {
+        query() {
 
         }
+    },
+    computed: {
+
+    },
+    created() {
+
+    },
+    mounted() {
+
+    },
+    destroyed() {
+
     }
+}
 
 </script>
+
+
+<style lang="sass">
+
+@import "../../scss/<%= name %>.scss";
+
+</style>

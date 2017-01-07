@@ -24,10 +24,10 @@ module.exports = Base.extend({
 
         this.fs.copyTpl(
             this.templatePath('template.vue'),
-            this.destinationPath(this.p + '.vue')
-            // {
-            //     name: this.p
-            // }
+            this.destinationPath(this.p + '.vue'),
+            {
+                name: this.p
+            }
         );
     },
 
