@@ -10,6 +10,7 @@ Full stack javascript project scaffold, including vue, webpack, gulp, babel, exp
 - yo yx (new frontend project)
 - yo yx:vue (install vue 2 dependencies)
 - yo yx:v (generate vue file)
+- yo yx:m (generate mocha test file)
 - yo yx:gulp (add gulp configure files)
 - yo yx:webpack (add webpack configure files)
 - yo yx:backend (add backend codes)

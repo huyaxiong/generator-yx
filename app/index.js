@@ -23,7 +23,10 @@ module.exports = Base.extend({
             "author": "Hugh",
             "license": "ISC",
             "dependencies": {},
-            "devDependencies": {}
+            "devDependencies": {},
+            "babel": {
+                "presets": ["es2015"]
+            }
         };
         this.fs.writeJSON('package.json', config);
     },
