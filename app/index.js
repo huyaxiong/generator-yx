@@ -34,7 +34,7 @@ module.exports = Base.extend({
     constructor: function () {
 
         Base.apply(this, arguments);
-        // this.argument('p', {type: String, required: false});
+        // this.argument('p', {userType: String, required: false});
     },
 
     prompting: function () {

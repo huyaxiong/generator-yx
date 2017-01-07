@@ -1,4 +1,5 @@
 const USER_QUERY = 'USER_QUERY';
+const USER_CREATE = 'USER_CREATE';
 
 
-export {USER_QUERY};
+export default {USER_QUERY, USER_CREATE};

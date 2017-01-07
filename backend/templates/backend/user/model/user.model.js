@@ -6,7 +6,7 @@ const schema = mongoose.Schema({
     password:String,
     email:String,
     mobile: String,
-    // role: {type: Schema.Types.ObjectId, ref: 'Role'},
+    // role: {userType: Schema.Types.ObjectId, ref: 'Role'},
     createTime: {type: Date, default: Date.now},
     updateTime: {type: Date, default: Date.now}
 });

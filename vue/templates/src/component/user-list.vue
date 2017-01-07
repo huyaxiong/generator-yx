@@ -29,7 +29,6 @@ export default {
     },
     methods: {
         query: function () {
-            this.$store.dispatch(USER_QUERY, [{name: '111'}, {name: '222'}]);
 //                axios.get('')
 //                        .then((res) => {
 //                            this.userList = res.data;

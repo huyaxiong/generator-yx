@@ -1,6 +1,6 @@
 {
   "name": "generator-yx",
-  "version": "1.7.1",
+  "version": "1.7.2",
   "description": "Full stack javascript project scaffold.",
   "main": "app/index.js",
   "dependencies": {
