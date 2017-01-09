@@ -38,7 +38,7 @@ export default {
 </script>
 
 
-<style lang="sass">
+<style lang="sass" scoped>
 
 @import "../../scss/<%= name %>.scss";
 
