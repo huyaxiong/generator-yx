@@ -1,5 +1,4 @@
 var generators = require('yeoman-generator');
-var Base = generators.Base;
 var path = require('path');
 var npmDevDeps = ['gulp@3.8.11', 'gulp-babel@6.1.2', 'gulp-uglify@1.1.0',
     'gulp-concat@2.5.2', 'gulp-sourcemaps@1.5.0',
@@ -9,19 +8,7 @@ var npmDevDeps = ['gulp@3.8.11', 'gulp-babel@6.1.2', 'gulp-uglify@1.1.0',
     'browser-sync@2.8.2'];
 
 
-module.exports = Base.extend({
-
-    initNpmConfig: function () {
-
-    },
-
-    constructor: function () {
-
-    },
-
-    prompting: function () {
-
-    },
+module.exports = generators.Base.extend({
 
     writing: function () {
 

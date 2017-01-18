@@ -20,18 +20,6 @@ var npmDevDeps = ["autoprefixer@^6.5.3",
 
 module.exports = Base.extend({
 
-    initNpmConfig: function () {
-
-    },
-
-    constructor: function () {
-
-    },
-
-    prompting: function () {
-
-    },
-
     writing: function () {
 
         var cb = this.async();
