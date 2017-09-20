@@ -15,7 +15,8 @@ var npmDevDeps = ["autoprefixer@^6.5.3",
     "sass-loader@^4.0.2",
     "style-loader@^0.13.1",
     "webpack@^2.1.0-beta.25",
-    "webpack-dev-server@^2.1.0-beta.12"];
+    "webpack-dev-server@^2.1.0-beta.12",
+    "cross-env@5.0.5"];
 
 
 module.exports = Base.extend({
