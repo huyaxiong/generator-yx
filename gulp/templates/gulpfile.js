@@ -11,6 +11,8 @@ const postcssScss = require('postcss-scss');
 const browserSync = require('browser-sync').create();
 const imagemin = require('gulp-imagemin');
 const fontmin = require('gulp-fontmin');
+const GulpSSH = require('gulp-ssh');
+const fs = require('fs');
 const clientDir = './';
 
 
@@ -110,6 +112,28 @@ gulp.task('default', function () {
         }
     });
 });
+
+
+gulp.task('deploy', () => {
+
+    var gulpSSH = new GulpSSH({
+        sshConfig: {
+            host: 'yaxiong.me',
+            port: 22,
+            username: 'root',
+            privateKey: fs.readFileSync('/Users/Hugh/.ssh/id_rsa')
+        }
+    });
+
+    return gulpSSH.shell([
+        'cd /home/projects/',
+        'git pull origin master',
+        'pm2 startOrRestart pm2.json'
+    ]).on('ssh2Data', (data) => {
+        process.stdout.write(data.toString());
+    });
+});
+
 
 
 

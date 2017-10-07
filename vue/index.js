@@ -4,8 +4,8 @@ var path = require('path');
 var npmDeps = ["axios@^0.15.3",
     "vue@^2.1.3",
     "vue-router@^2.1.0",
-    "vuex@^2.0.0",
-    "vuex-router-sync@^2.1.1"];
+    "vuex@^2.4.0",
+    "vuex-router-sync@^4.3.2"];
 var npmDevDeps = ["vue-loader@^10.0.0"];
 
 
