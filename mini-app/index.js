@@ -23,5 +23,9 @@ module.exports = generators.Base.extend({
             this.templatePath('template.wxss'),
             this.p + '.wxss'
         );
+        this.fs.copy(
+            this.templatePath('template.json'),
+            this.p + '.json'
+        );
     }
 });

@@ -5,33 +5,26 @@ Full stack javascript project scaffold, including vue, webpack, gulp, babel, exp
 
 # Guide
 
-### Suggest To Use
+### Frontend
 
 - yo yx (new frontend project)
 - yo yx:vue (install vue dependencies)
 - yo yx:vue-c (generate vue component file)
 - yo yx:vue-m (generate vuex module file)
-- yo yx:m (generate mocha test file)
-- yo yx:gulp (add gulp configure files)
 - yo yx:webpack (add webpack configure files)
-- yo yx:backend (add backend codes)
-
-
-### About To Deprecate
-- yo yx:ng xxx (install angular 1.4 dependencies)
-- yo yx:ngMod xxx (generate angular module)
-- yo yx:ngCtrl xxx (generate angular controller)
-- yo yx:ngFty xxx (generate angular factory)
-- yo yx:ngSvc xxx (generate angular service)
-- yo yx:ngDrt xxx (generate angular directive)
-- yo yx:ts (add ts configure files)
-- yo yx:backend-commonjs (add backend codes of commonjs version)
+- yo yx:gulp (add gulp configure files)
 - yo yx:mini-app (generate wechat mini-app files)
+
+
+### Backend
+- yo yx:backend-commonjs (add backend codes of commonjs version)
+- yo yx:backend (add backend codes)
+- yo yx:m (generate mocha test file)
 
 
 # Basic Project Structure
 
-    -Project    
+    -Project
         -js (containing source js code of frontend)
         -images (containing images)
         -scss (containing source scss code of frontend)
@@ -40,8 +33,8 @@ Full stack javascript project scaffold, including vue, webpack, gulp, babel, exp
         -server (containing compiled js code of backend)
         -index.html
         -package.json
-        
-        
+
+
 # Contact
 
 Hugh Hu
