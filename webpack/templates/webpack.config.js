@@ -1,20 +1,17 @@
 var path = require('path');
 var webpack = require('webpack');
-var autoprefixer = require('autoprefixer');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var CleanWebpackPlugin = require('clean-webpack-plugin');
-var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
-var distDir = path.resolve(__dirname, 'src', 'customize', 'js');
 
 
 module.exports = {
 
     entry: {
-        app: 'main.js'
+        app: path.resolve(__dirname, 'src', 'app.js')
     },
     output: {
         publicPath: '/customize/js/',
-        path: distDir,
+        path: path.resolve(__dirname, 'dist'),
         filename: '[name].js',
     },
     module: {
@@ -64,11 +61,10 @@ module.exports = {
     },
     resolve: {
         alias: {
+            'jquery': 'jquery/dist/jquery.min.js',
             'vue$': 'vue/dist/vue.common.js',
             'vue-router$': 'vue-router/dist/vue-router.common.js',
             // 'vuex$': 'vuex/dist/vuex.min.js',
-            'jquery': 'jquery/dist/jquery.min.js',
-            // 'date-fns$': 'date-fns/dist/axios.min.js',
         }
     },
     devtool: 'cheap-module-eval-source-map',
@@ -80,9 +76,9 @@ module.exports = {
         // }),
         // new HtmlWebpackPlugin({
         //     inject:'head',
-        //     filename: 'points-gift.html',
-        //     template: 'points-gift.html',
-        //     chunks: ['vendor', 'points-gift']
+        //     filename: 'index.html',
+        //     template: 'index.html',
+        //     chunks: ['vendor']
         // }),
         // new webpack.ProvidePlugin({
         //     $: 'zepto/dist/zepto.js/zepto.min.js'
@@ -100,7 +96,7 @@ if (process.env.NODE_ENV === 'test') {
         // new CleanWebpackPlugin([distDir]),
         new webpack.DefinePlugin({
             'process.env': {
-                'BASE_URL': JSON.stringify('https://stage.coolfen.com/api/')
+                'BASE_URL': JSON.stringify('https://yaxiong.me/')
             }
         }),
         new webpack.optimize.UglifyJsPlugin({
@@ -121,7 +117,7 @@ if (process.env.NODE_ENV === 'prod') {
         // new CleanWebpackPlugin([distDir]),
         new webpack.DefinePlugin({
             'process.env': {
-                'BASE_URL': JSON.stringify('https://api.coolfen.com/api/')
+                'BASE_URL': JSON.stringify('https://yaxiong.me/')
             }
         }),
         new webpack.optimize.UglifyJsPlugin({

@@ -39,7 +39,7 @@ module.exports = Base.extend({
 
     prompting: function () {
 
-        var frontendDeps = ['normalize.css@^5.0.0', 'jquery@2.2.3', 'susy@2.2.12', 'foundation-sites@6.2.3'];
+        var frontendDeps = ['normalize.css@^5.0.0', 'jquery@2.2.3', 'susy@2.2.12'];
         var cb = this.async();
 
         this.prompt({

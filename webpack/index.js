@@ -16,6 +16,7 @@ var npmDevDeps = ["autoprefixer@^6.5.3",
     "style-loader@^0.13.1",
     "webpack@^2.1.0-beta.25",
     "webpack-dev-server@^2.1.0-beta.12",
+    "clean-webpack-plugin@^0.1.17",
     "cross-env@5.0.5"];
 
 
