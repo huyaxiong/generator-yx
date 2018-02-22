@@ -13,13 +13,13 @@ Full stack javascript project scaffold, including vue, webpack, gulp, babel, exp
 - yo yx:vue-m (generate vuex module file)
 - yo yx:webpack (add webpack configure files)
 - yo yx:gulp (add gulp configure files)
-- yo yx:mini-app (generate wechat mini-app files)
+- yo yx:mini-program (generate wechat mini-app files)
 
 
 ### Backend
 - yo yx:backend-commonjs (add backend codes of commonjs version)
 - yo yx:backend (add backend codes)
-- yo yx:m (generate mocha test file)
+- yo yx:mocha (generate mocha test file)
 
 
 # Basic Project Structure
