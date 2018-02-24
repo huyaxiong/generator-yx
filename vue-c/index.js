@@ -29,6 +29,14 @@ module.exports = Base.extend({
                 name: this.p
             }
         );
+
+        this.fs.copyTpl(
+            this.templatePath('template.scss'),
+            this.destinationPath(this.p + '.scss'),
+            {
+                name: this.p
+            }
+        );
     },
 
     install: function () {
