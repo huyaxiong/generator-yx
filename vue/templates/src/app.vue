@@ -16,12 +16,14 @@
 <script>
 
 import axios from 'axios';
-import ghost from './common/ghost'
-import router from './router'
+import ghost from './common/ghost';
+import router from './router';
+import store from './store';
 
 
 export default {
     router,
+    store,
     components: {},
     data: function () {
         return {}
