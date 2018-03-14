@@ -2,9 +2,11 @@ var generators = require('yeoman-generator');
 var Base = generators.Base;
 var path = require('path');
 var npmDevDeps = ["autoprefixer@^6.5.3",
+    "babel-core@^6.26.0",
     "babel-loader@^6.2.8",
     "babel-preset-es2015@^6.6.0",
     "babel-plugin-transform-runtime@^6.15.0",
+    "resolve-url-loader@^2.3.0",
     "css-loader@^0.26.1",
     "file-loader@^0.9.0",
     "url-loader@^0.5.7",

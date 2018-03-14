@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import User from './component/user.vue';
-import UserDetail from './component/user-detail.vue';
-import UserList from './component/user-list.vue';
+import User from './components/user.vue';
+import UserDetail from './components/user-detail.vue';
+import UserList from './components/user-list.vue';
 
 
 Vue.use(VueRouter);
