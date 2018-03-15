@@ -1,0 +1,20 @@
+@import "settings";
+
+
+@mixin absolute-center($w, $h) {
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translate(-$w/2, -$h/2);
+}
+
+@mixin absolute-center__horizontal($w) {
+  position: absolute;
+  left: 50%;
+  transform: translate(-$w/2, 0);
+}
+
+@mixin flex-center__vertical() {
+  display: flex;
+  align-items:center;
+}

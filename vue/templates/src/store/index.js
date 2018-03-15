@@ -9,7 +9,6 @@ Vue.use(Vuex);
 
 const store = new Vuex.Store({
     state: {userList: []},
-    getters: {},
     getters: {
         [userType.USER_QUERY](state) {
         }
