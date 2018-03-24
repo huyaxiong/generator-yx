@@ -16,17 +16,20 @@ export function useMiddlewaresPre(app) {
     app.use(bodyParser.json({limit: '10mb'}));
     app.use(bodyParser.urlencoded({limit: '10mb', extended: true}));
     app.use("/node_modules", staticDir(path.resolve(__dirname, '..', '..', 'node_modules')));
-    app.use("/image", staticDir(path.resolve(__dirname, '..', '..', 'images')));
-    app.use("/music", staticDir(path.resolve(__dirname, '..', '..', 'musics')));
-    app.use("/font", staticDir(path.resolve(__dirname, '..', '..', 'fonts')));
+    app.use("/images", staticDir(path.resolve(__dirname, '..', '..', 'images')));
+    app.use("/fonts", staticDir(path.resolve(__dirname, '..', '..', 'fonts')));
     app.use("/dist", staticDir(path.resolve(__dirname, '..', '..', 'dist')));
     app.use(morgan('tiny'));
     app.use(favicon(path.resolve(__dirname, '..', '..', 'favicon.ico')));
     app.use(sessionMiddleware);
-    app.use(cors());
+    app.use(cors({
+        // origin: '192.168.0.115:8080',
+        // credentials:true
+    }));
 
     app.listen(app.get('port'), function () {
         console.log('express started.');
+        console.log('http://127.0.0.1:' + app.get('port'));
     });
 }
 
