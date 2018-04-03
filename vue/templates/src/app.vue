@@ -1,13 +1,17 @@
 <template>
 
 <div id="app">
-    <keep-alive>
-        <router-view v-if="$route.meta.keepAlive">
-        </router-view>
-    </keep-alive>
+    <transition name="slide">
+        <keep-alive>
+            <router-view v-if="$route.meta.keepAlive">
+            </router-view>
+        </keep-alive>
+    </transition>
 
-    <router-view v-if="!$route.meta.keepAlive">
-    </router-view>
+    <transition name="slide">
+        <router-view v-if="!$route.meta.keepAlive">
+        </router-view>
+    </transition>
 </div>
 
 </template>
@@ -15,20 +19,20 @@
 
 <script>
 
-import axios from 'axios';
-import ghost from './common/ghost';
 import router from './router';
 import store from './store';
+import FastClick from 'fastclick';
 
 
 export default {
     router,
     store,
     components: {},
-    data: function () {
+    data() {
         return {}
     },
-    mounted: function () {
+    created() {
+        FastClick.attach(document.body);
     }
 }
 
