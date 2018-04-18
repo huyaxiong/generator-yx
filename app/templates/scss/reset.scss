@@ -18,6 +18,14 @@ ul {
   margin: 0;
 }
 
+dl {
+  margin: 0;
+
+  & > dd {
+    margin: 0;
+  }
+}
+
 input {
   margin: 0;
   background-color: transparent;

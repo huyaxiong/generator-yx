@@ -10,7 +10,7 @@ module.exports = {
         app: path.resolve(__dirname, 'src', 'app.js')
     },
     output: {
-        publicPath: '/customize/js/',
+        publicPath: '/dist/',
         path: path.resolve(__dirname, 'dist'),
         filename: '[name].js',
     },

@@ -27,7 +27,8 @@ import FastClick from 'fastclick';
 export default {
     router,
     store,
-    components: {},
+    components: {
+    },
     data() {
         return {}
     },
