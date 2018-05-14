@@ -1,6 +1,6 @@
 {
   "name": "generator-yx",
-  "version": "1.8.4",
+  "version": "1.8.5",
   "description": "Full stack javascript project scaffold.",
   "main": "app/index.js",
   "dependencies": {
@@ -21,7 +21,15 @@
     "yeoman-generator"
   ],
   "files": [
-    "app"
+    "app",
+    "backend",
+    "gulp",
+    "mini-program",
+    "mocha",
+    "vue",
+    "vue-c",
+    "vue-m",
+    "webpack"
   ],
   "author": "huyaxiong",
   "license": "ISC",
