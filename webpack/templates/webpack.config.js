@@ -1,8 +1,8 @@
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-var CleanWebpackPlugin = require('clean-webpack-plugin');
-
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
 
 module.exports = {
 
@@ -12,7 +12,7 @@ module.exports = {
     output: {
         publicPath: '/dist/',
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].js',
+        filename: '[name].[hash].js',
     },
     module: {
         rules: [
@@ -62,24 +62,18 @@ module.exports = {
     resolve: {
         alias: {
             'jquery': 'jquery/dist/jquery.min.js',
-            'vue$': 'vue/dist/vue.common.js',
-            'vue-router$': 'vue-router/dist/vue-router.common.js',
-            // 'vuex$': 'vuex/dist/vuex.min.js',
+            'vue': 'vue/dist/vue.esm.js',
+            'vue-router': 'vue-router/dist/vue-router.esm.js',
+            // 'vuex': 'vuex/dist/vuex.esm.js',
         }
     },
     devtool: 'cheap-module-eval-source-map',
     plugins: [
         new webpack.optimize.OccurrenceOrderPlugin(),
-        // new webpack.optimize.CommonsChunkPlugin({
-        //     name: "vendor",
-        //     minChunks: Infinity
-        // }),
-        // new HtmlWebpackPlugin({
-        //     inject:'head',
-        //     filename: 'index.html',
-        //     template: 'index.html',
-        //     chunks: ['vendor']
-        // }),
+        new CleanWebpackPlugin([path.resolve(__dirname, 'dist')]),
+        new HtmlWebpackPlugin({
+            template: 'index.html',
+        }),
         // new webpack.ProvidePlugin({
         //     $: 'zepto/dist/zepto.js/zepto.min.js'
         // })
@@ -93,20 +87,12 @@ if (process.env.NODE_ENV === 'test') {
 
     module.exports.devtool = false;
     module.exports.plugins = (module.exports.plugins || []).concat([
-        // new CleanWebpackPlugin([distDir]),
         new webpack.DefinePlugin({
             'process.env': {
                 'BASE_URL': JSON.stringify('https://yaxiong.me/')
             }
         }),
-        new webpack.optimize.UglifyJsPlugin({
-            // mangle: false,
-            comments: false,
-            compress: {
-                warnings: false,
-                pure_funcs: ['console.log', 'console.warn', 'window.console.log.apply']
-            }
-        }),
+        // new BundleAnalyzerPlugin()
     ])
 }
 
@@ -114,11 +100,13 @@ if (process.env.NODE_ENV === 'prod') {
 
     module.exports.devtool = false;
     module.exports.plugins = (module.exports.plugins || []).concat([
-        // new CleanWebpackPlugin([distDir]),
         new webpack.DefinePlugin({
             'process.env': {
                 'BASE_URL': JSON.stringify('https://yaxiong.me/')
             }
+        }),
+        new webpack.LoaderOptionsPlugin({
+            minimize: true
         }),
         new webpack.optimize.UglifyJsPlugin({
             // mangle: false,
