@@ -28,15 +28,11 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(ttf)$/,
-                loader: 'file-loader',
+                test: /\.(png|jpg|svg|ttf|woff|eot)$/,
+                loader: 'url-loader',
                 options: {
-                    name: '[name].[ext]?[hash]'
+                    limit: '20'
                 }
-            },
-            {
-                test: /\.(png|jpg)$/,
-                loader: 'url-loader'
             },
             {
                 test: /\.scss$/,
