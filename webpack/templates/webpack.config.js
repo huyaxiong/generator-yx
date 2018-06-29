@@ -2,7 +2,9 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+
 
 module.exports = {
 
@@ -12,7 +14,7 @@ module.exports = {
     output: {
         publicPath: '/dist/',
         path: path.resolve(__dirname, 'dist'),
-        filename: '[name].[hash].js',
+        filename: '[name].[chunkhash].js',
     },
     module: {
         rules: [
@@ -60,12 +62,12 @@ module.exports = {
             'jquery': 'jquery/dist/jquery.min.js',
             'vue': 'vue/dist/vue.esm.js',
             'vue-router': 'vue-router/dist/vue-router.esm.js',
-            // 'vuex': 'vuex/dist/vuex.esm.js',
+            'vuex': 'vuex/dist/vuex.esm.js',
+            'axios': 'axios/dist/axios.min.js',
         }
     },
-    devtool: 'cheap-module-eval-source-map',
     plugins: [
-        new webpack.optimize.OccurrenceOrderPlugin(),
+        new VueLoaderPlugin(),
         new CleanWebpackPlugin([path.resolve(__dirname, 'dist')]),
         new HtmlWebpackPlugin({
             template: 'index.html',
@@ -79,21 +81,23 @@ module.exports = {
     // }
 };
 
-if (process.env.NODE_ENV === 'test') {
+if (process.env.NODE_ENV === 'dev') {
 
-    module.exports.devtool = false;
-    module.exports.plugins = (module.exports.plugins || []).concat([
-        new webpack.DefinePlugin({
-            'process.env': {
-                'BASE_URL': JSON.stringify('https://yaxiong.me/')
-            }
-        }),
-        // new BundleAnalyzerPlugin()
-    ])
+    module.exports.mode = 'development';
+    module.exports.devtool = 'cheap-module-eval-source-map',
+        module.exports.plugins = (module.exports.plugins || []).concat([
+            new webpack.DefinePlugin({
+                'process.env': {
+                    'BASE_URL': JSON.stringify('https://yaxiong.me/')
+                }
+            }),
+            // new BundleAnalyzerPlugin()
+        ])
 }
 
 if (process.env.NODE_ENV === 'prod') {
 
+    module.exports.mode = 'production';
     module.exports.devtool = false;
     module.exports.plugins = (module.exports.plugins || []).concat([
         new webpack.DefinePlugin({
@@ -112,5 +116,18 @@ if (process.env.NODE_ENV === 'prod') {
                 pure_funcs: ['console.log', 'console.warn', 'window.console.log.apply']
             }
         }),
-    ])
+    ]);
+    module.exports.optimization = {
+        minimize: true,
+        // nodeEnv: 'production',
+        splitChunks: {
+            cacheGroups: {
+                vendor: {
+                    test: /[\\/]node_modules[\\/]/,
+                    name: 'vendors',
+                    chunks: 'all'
+                }
+            }
+        }
+    }
 }
