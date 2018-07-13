@@ -7,8 +7,7 @@
     "lodash": "^4.0.0",
     "yeoman-generator": "^0.22.1"
   },
-  "devDependencies": {
-  },
+  "devDependencies": {},
   "scripts": {
     "start": "yo yx",
     "test": ""
