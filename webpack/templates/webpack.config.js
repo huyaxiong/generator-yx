@@ -69,7 +69,10 @@ module.exports = {
             template: 'index.html'
         }),
         // new BundleAnalyzerPlugin()
-    ]
+    ],
+    devServer: {
+        // host: "192.168.0.109"
+    }
 };
 
 if (process.env.NODE_ENV === 'prod') {
