@@ -14,7 +14,7 @@ module.exports = Base.extend({
             "description": "",
             "main": "server/main.js",
             "scripts": {
-                "wf": "cross-env NODE_ENV=dev ./node_modules/.bin/webpack-dev-server -w",
+                "wf": "cross-env NODE_ENV=dev ./node_modules/.bin/webpack-dev-server -w --open-page './dist/index.html'",
                 "bf": "cross-env NODE_ENV=prod ./node_modules/.bin/webpack --progress",
                 "wb": "gulp --gulpfile gulpfile.backend.js",
                 "bb": "gulp --gulpfile gulpfile.backend.js backend",
