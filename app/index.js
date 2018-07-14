@@ -59,7 +59,8 @@ module.exports = Base.extend({
         var cb = this.async();
         // var p = this.p;
         this.fs.copy(path.join(__dirname, 'templates'), '.');
-        this.spawnCommandSync('mkdir', ['logs', 'dist']);
+        this.spawnCommandSync('mkdir', ['logs', 'dist', 'fonts']);
+        this.spawnCommandSync('touch', ['.babelrc', '.gitignore']);
         this.initNpmConfig();
         cb();
     },
