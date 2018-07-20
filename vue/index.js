@@ -1,14 +1,13 @@
 var generators = require('yeoman-generator');
 var Base = generators.Base;
 var path = require('path');
-var npmDeps = ["axios@^0.15.3",
-    "fastclick@^1.0.6",
-    "vue-template-compiler@^2.5.16",
-    "vue@^2.1.3",
-    "vue-router@^2.1.0",
-    "vuex@^2.4.0",
-    "vuex-router-sync@^4.3.2"];
-var npmDevDeps = ["vue-loader@^10.0.0"];
+var npmDeps = ["axios@latest",
+    "fastclick@latest",
+    "vue@latest",
+    "vue-router@latest",
+    "vuex@latest"];
+var npmDevDeps = ["vue-loader@latest",
+    "vue-template-compiler@latest"];
 
 
 module.exports = Base.extend({

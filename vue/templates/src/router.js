@@ -1,24 +1,15 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
-import User from './components/user.vue';
-import UserList from './components/user-list.vue';
+import User from './views/user.vue';
 
 
 Vue.use(VueRouter);
 
 const routes = [
     {
-        path: '/user', component: User,
-        children: [
-            {
-                path: '',
-                name: 'user-list',
-                component: UserList,
-                meta: {
-                    keepAlive: true
-                }
-            }
-        ]
+        path: '/user', component: User, meta: {
+            keepAlive: true
+        }
     }
 ];
 

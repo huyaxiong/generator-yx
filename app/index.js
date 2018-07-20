@@ -16,17 +16,12 @@ module.exports = Base.extend({
             "scripts": {
                 "wf": "cross-env NODE_ENV=dev ./node_modules/.bin/webpack-dev-server -w --open-page './dist/index.html'",
                 "bf": "cross-env NODE_ENV=prod ./node_modules/.bin/webpack --progress",
-                "wb": "gulp --gulpfile gulpfile.backend.js",
-                "bb": "gulp --gulpfile gulpfile.backend.js backend",
                 "start": "node ./server/main.js --debug"
             },
             "author": "Hugh",
             "license": "ISC",
             "dependencies": {},
             "devDependencies": {},
-            "babel": {
-                "presets": ["es2015"]
-            }
         };
         this.fs.writeJSON('package.json', config);
     },
@@ -45,7 +40,7 @@ module.exports = Base.extend({
         this.prompt({
             type: "checkbox",
             name: 'frontendDeps',
-            message: 'What do you want?',
+            message: 'What do you need?',
             choices: frontendDeps,
             default: []
         }, function (a) {

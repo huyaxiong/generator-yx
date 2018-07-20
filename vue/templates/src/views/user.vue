@@ -1,8 +1,7 @@
 <template>
 
 <div>
-    <h2>User Center</h2>
-    <router-view></router-view>
+    <h1>User</h1>
 </div>
 
 </template>
