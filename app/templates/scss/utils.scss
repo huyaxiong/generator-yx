@@ -1,4 +1,4 @@
-@import "settings";
+@import "./colors.scss";
 
 
 @mixin absolute-center($w, $h) {
@@ -35,3 +35,8 @@
   overflow: hidden;
 }
 
+@mixin ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}
