@@ -1,12 +1,13 @@
 var generators = require('yeoman-generator');
 var Base = generators.Base;
 var path = require('path');
-var npmDeps = ["axios@latest",
+var npmDeps = [
     "fastclick@latest",
     "vue@latest",
     "vue-router@latest",
     "vuex@latest"];
-var npmDevDeps = ["vue-loader@latest",
+var npmDevDeps = [
+    "vue-loader@latest",
     "vue-template-compiler@latest"];
 
 
