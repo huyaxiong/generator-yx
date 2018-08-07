@@ -1,5 +1,4 @@
-var generators = require('yeoman-generator');
-var Base = generators.Base;
+var Generator = require('yeoman-generator');
 var path = require('path');
 var npmDeps = [
     "axios@latest"];
@@ -30,9 +29,17 @@ var npmDevDeps = [
     "cross-env@5.0.5"];
 
 
-module.exports = Base.extend({
+module.exports = class extends Generator {
 
-    initNpmConfig: function () {
+    constructor(args, opts) {
+
+        super(args, opts);
+    }
+
+    writing() {
+
+        this.fs.copy(path.join(__dirname, 'templates'), '.', {dot: true});
+        this.spawnCommandSync('mkdir', ['logs', 'dist', 'fonts']);
 
         var config = {
             "name": this.appname,
@@ -50,49 +57,11 @@ module.exports = Base.extend({
             "devDependencies": {},
         };
         this.fs.writeJSON('package.json', config);
-    },
+    }
 
-    constructor: function () {
-
-        Base.apply(this, arguments);
-        // this.argument('p', {userType: String, required: false});
-    },
-
-    prompting: function () {
-
-        var cb = this.async();
-        cb();
-        // var frontendDeps = ['normalize.css@^5.0.0', 'jquery@2.2.3', 'susy@2.2.12'];
-        //
-        // this.prompt({
-        //     type: "checkbox",
-        //     name: 'frontendDeps',
-        //     message: 'What do you need?',
-        //     choices: frontendDeps,
-        //     default: []
-        // }, function (a) {
-        //     npmDeps = npmDeps.concat(a.frontendDeps);
-        //     cb();
-        // }.bind(this));
-    },
-
-    writing: function () {
-
-        var cb = this.async();
-        // var p = this.p;
-        this.fs.copy(path.join(__dirname, 'templates'), '.', {dot:true});
-        this.spawnCommandSync('mkdir', ['logs', 'dist', 'fonts']);
-        this.initNpmConfig();
-        cb();
-    },
-
-    install: function () {
+    install() {
 
         this.npmInstall(npmDeps, {'save': true});
         this.npmInstall(npmDevDeps, {'saveDev': true});
-    },
-
-    done: function () {
-        console.log('done.')
     }
-});
+};

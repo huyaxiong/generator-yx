@@ -1,26 +1,17 @@
-var generators = require('yeoman-generator');
-var Base = generators.Base;
+var Generator = require('yeoman-generator');
 var path = require('path');
 var npmDeps = [];
 
 
-module.exports = Base.extend({
+module.exports = class extends Generator {
 
-    initNpmConfig: function () {
+    constructor(args, opts) {
 
-    },
+        super(args, opts);
+        this.p = args[0];
+    }
 
-    constructor: function () {
-
-        generators.Base.apply(this, arguments);
-        this.argument('p', {type: String, required: true});
-    },
-
-    prompting: function () {
-
-    },
-
-    writing: function () {
+    writing() {
 
         this.fs.copyTpl(
             this.templatePath('template.vue'),
@@ -37,13 +28,5 @@ module.exports = Base.extend({
                 name: this.p
             }
         );
-    },
-
-    install: function () {
-
-    },
-
-    done: function () {
-        console.log('done.')
     }
-});
+};

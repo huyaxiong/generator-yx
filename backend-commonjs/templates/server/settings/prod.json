@@ -1,4 +1,0 @@
-{
-  "port": 3333,
-  "mongoDBUrl":"mongodb://user:password@localhost:27017/test"
-}

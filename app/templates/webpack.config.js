@@ -77,7 +77,7 @@ if (process.env.NODE_ENV === 'prod') {
         splitChunks: {
             cacheGroups: {
                 vendor: {
-                    test: /[\\/]node_modules[\\/]/,
+                    test: /[\\/]node_modules[\\/](vue|axios)/,
                     name: 'vendors',
                     chunks: 'all'
                 }

@@ -1,15 +1,15 @@
-var generators = require('yeoman-generator');
+var Generator = require('yeoman-generator');
 
 
-module.exports = generators.Base.extend({
+module.exports = class extends Generator {
 
-    constructor: function () {
+    constructor(args, opts) {
 
-        generators.Base.apply(this, arguments);
-        this.argument('p', {type: String, required: true});
-    },
+        super(args, opts);
+        this.p = args[0];
+    }
 
-    writing: function () {
+    writing() {
 
         this.fs.copy(
             this.templatePath('template.js'),
@@ -28,4 +28,4 @@ module.exports = generators.Base.extend({
             this.p + '.json'
         );
     }
-});
+};

@@ -1,5 +1,4 @@
-var generators = require('yeoman-generator');
-var Base = generators.Base;
+var Generator = require('yeoman-generator');
 var path = require('path');
 var npmDeps = [
     "fastclick@latest",
@@ -11,22 +10,18 @@ var npmDevDeps = [
     "vue-template-compiler@latest"];
 
 
-module.exports = Base.extend({
+module.exports = class extends Generator {
 
-    writing: function () {
+    writing() {
 
         var cb = this.async();
         this.fs.copy(path.join(__dirname, 'templates'), '.');
         cb();
-    },
+    }
 
-    install: function () {
+    install() {
 
         this.npmInstall(npmDeps, {'save': true});
         this.npmInstall(npmDevDeps, {'saveDev': true});
-    },
-
-    done: function () {
-        console.log('done.')
     }
-});
+};
