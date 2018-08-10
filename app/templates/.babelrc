@@ -1,9 +1,15 @@
 {
   "presets": [
-    "es2015"
+    ["env", {"modules": false}]
   ],
+  "env": {
+    "test": {
+      "plugins": ["transform-es2015-modules-commonjs"]
+    }
+  },
   "plugins": [
     "transform-runtime",
+    "syntax-dynamic-import",
     "transform-object-rest-spread",
     [
       "babel-plugin-root-import",

@@ -1,12 +1,15 @@
 var Generator = require('yeoman-generator');
 var path = require('path');
 var npmDeps = [
-    "axios@latest"];
+    "axios@latest",
+    "jest@^23.4.2"];
 var npmDevDeps = [
     "autoprefixer@^6.5.3",
     "babel-core@^6.26.0",
     "babel-loader@^7.1.5",
-    "babel-preset-es2015@^6.6.0",
+    "babel-preset-env@^1.7.0",
+    "babel-plugin-transform-es2015-modules-commonjs@^6.26.2",
+    "babel-plugin-syntax-dynamic-import@^6.18.0",
     "babel-plugin-root-import@^6.1.0",
     "babel-plugin-transform-runtime@^6.15.0",
     "babel-plugin-transform-object-rest-spread@^6.26.0",
