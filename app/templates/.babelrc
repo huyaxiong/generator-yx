@@ -1,12 +1,7 @@
 {
   "presets": [
-    ["env", {"modules": false}]
+    "env"
   ],
-  "env": {
-    "test": {
-      "plugins": ["transform-es2015-modules-commonjs"]
-    }
-  },
   "plugins": [
     "transform-runtime",
     "syntax-dynamic-import",
@@ -14,8 +9,16 @@
     [
       "babel-plugin-root-import",
       {
-        "rootPathSuffix": "./src/",
-        "rootPathPrefix": "~"
+        "paths": [
+          {
+            "rootPathSuffix": "./backend/",
+            "rootPathPrefix": "~"
+          },
+          {
+            "rootPathSuffix": "./src/",
+            "rootPathPrefix": "@"
+          }
+        ]
       }
     ]
   ]
