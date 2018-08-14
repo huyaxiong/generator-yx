@@ -5,18 +5,20 @@ const babel = require('gulp-babel');
 function makeBackendJS(filePath) {
 
     let src = !!filePath ? filePath : 'backend/**/*.js';
+    let dist = !!filePath ? filePath.slice(0, filePath.lastIndexOf('/') + 1).replace('backend', 'server') : 'server/';
 
     gulp.src(src)
         .pipe(babel())
-        .pipe(gulp.dest('server/'));
+        .pipe(gulp.dest(dist));
 }
 
 function makeBackendJSON(filePath) {
 
     let src = !!filePath ? filePath : 'backend/**/*.json';
+    let dist = !!filePath ? filePath.slice(0, filePath.lastIndexOf('/') + 1).replace('backend', 'server') : 'server/';
 
     gulp.src(src)
-        .pipe(gulp.dest('server/'));
+        .pipe(gulp.dest(dist));
 }
 
 gulp.task('backend', function () {
