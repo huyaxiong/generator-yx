@@ -2,33 +2,20 @@ const gulp = require('gulp');
 const babel = require('gulp-babel');
 
 
-function makeBackendJS(filePath, fileName) {
+function makeBackendJS(filePath) {
 
-    var backendSrc = fileName ? 'backend/' + filePath + fileName : 'backend/**/*.js',
-        backendDest = fileName ? 'server/' + filePath : 'server/';
+    let src = !!filePath ? filePath : 'backend/**/*.js';
 
-    gulp.src(backendSrc)
-        .pipe(babel({
-            "presets": [
-                "es2017",
-                "node6"
-            ],
-            "plugins": [
-                "transform-runtime",
-                [
-                    "babel-project-relative-import",
-                    {
-                        "sourceDir": "server"
-                    }
-                ]
-            ]
-        }))
-        .pipe(gulp.dest(backendDest));
+    gulp.src(src)
+        .pipe(babel())
+        .pipe(gulp.dest('server/'));
 }
 
-function makeBackendJSON() {
+function makeBackendJSON(filePath) {
 
-    gulp.src('backend/**/*.json')
+    let src = !!filePath ? filePath : 'backend/**/*.json';
+
+    gulp.src(src)
         .pipe(gulp.dest('server/'));
 }
 
@@ -42,13 +29,11 @@ gulp.task('default', function () {
 
     gulp.watch(['backend/**/*.js', 'backend/**/*.json'], function (event) {
 
-        var filePath = event.path;
-        if (event.path.indexOf('backend') !== -1 && event.path.lastIndexOf('.json') !== -1) {
-            makeBackendJSON()
-        } else if (event.path.indexOf('backend') !== -1 && event.path.lastIndexOf('.js') !== -1) {
-            let filePath = event.path.slice(event.path.lastIndexOf('backend/') + 'backend/'.length, event.path.lastIndexOf('/') + 1);
-            let fileName = event.path.slice(event.path.lastIndexOf('/') + 1);
-            makeBackendJS(filePath, fileName);
+        let filePath = event.path;
+        if (event.path.lastIndexOf('.json') !== -1) {
+            makeBackendJSON(filePath);
+        } else if (event.path.lastIndexOf('.js') !== -1) {
+            makeBackendJS(filePath);
         }
     });
 });
