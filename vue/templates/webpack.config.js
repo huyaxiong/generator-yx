@@ -85,13 +85,14 @@ if (process.env.NODE_ENV === 'prod') {
     ]);
     module.exports.optimization = {
         minimize: true,
-        // nodeEnv: 'production',
+        runtimeChunk: 'single',
+        nodeEnv: 'production',
         splitChunks: {
             cacheGroups: {
                 vendor: {
                     test: /[\\/]node_modules[\\/]/,
                     name: 'vendors',
-                    chunks: 'all'
+                    chunks:'all'
                 }
             }
         }
