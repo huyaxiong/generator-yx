@@ -50,8 +50,9 @@ module.exports = class extends Generator {
             "description": "",
             "main": "server/main.js",
             "scripts": {
-                "wf": "cross-env NODE_ENV=dev ./node_modules/.bin/webpack-dev-server -w --open-page './dist/index.html'",
-                "bf": "cross-env NODE_ENV=prod ./node_modules/.bin/webpack --progress",
+                "watch": "cross-env NODE_ENV=dev ./node_modules/.bin/webpack-dev-server -w --open-page './index.html'",
+                "build:test": "cross-env NODE_ENV=test ./node_modules/.bin/webpack --progress",
+                "build:prod": "cross-env NODE_ENV=prod ./node_modules/.bin/webpack --progress",
                 "start": "node ./server/main.js --debug"
             },
             "author": "Hugh",
