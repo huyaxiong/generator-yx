@@ -1,5 +1,6 @@
 var Generator = require('yeoman-generator');
 var path = require('path');
+var fs = require('fs');
 var npmDeps = [
     "axios@latest",
     "jest@^23.4.2"];
@@ -21,7 +22,7 @@ var npmDevDeps = [
     "node-sass@^4.9.0",
     "postcss@^6.0.23",
     "postcss-loader@^2.1.5",
-    "postcss-pxtorem@^3.3.1",
+    "postcss-px2viewport@^0.1.3",
     "sass-loader@^7.0.3",
     "style-loader@^0.13.1",
     "webpack@^4.12.2",
@@ -41,9 +42,8 @@ module.exports = class extends Generator {
 
     writing() {
 
-        this.fs.copy(path.join(__dirname, 'templates'), '.', {dot: true});
         this.spawnCommandSync('mkdir', ['logs', 'dist', 'fonts']);
-
+        this.fs.copyTpl(path.join(__dirname, 'templates'), '.',  {}, {}, { globOptions: {dot: true}});
         var config = {
             "name": this.appname,
             "version": "1.0.0",
