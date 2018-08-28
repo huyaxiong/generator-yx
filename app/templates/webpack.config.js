@@ -42,7 +42,7 @@ module.exports = {
                 test: /\.(png|jpg|svg|ttf|woff|eot)$/,
                 loader: 'url-loader',
                 options: {
-                    limit: '10240'
+                    limit: '20480'
                 }
             },
             {

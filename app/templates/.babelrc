@@ -4,7 +4,6 @@
   ],
   "plugins": [
     "transform-runtime",
-    "syntax-dynamic-import",
     "transform-object-rest-spread",
     [
       "babel-plugin-root-import",

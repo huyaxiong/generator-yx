@@ -7,13 +7,16 @@ Vue.use(VueRouter);
 
 const routes = [
     {
-        path: '/home', component: Home, meta: {
+        path: '/home',
+        component: Home,
+        meta: {
             title: '主页',
             keepAlive: true
         }
     },
     {
-        path: '*', redirect: '/home'
+        path: '*',
+        redirect: '/home'
     }
 ];
 
