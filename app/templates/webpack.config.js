@@ -76,7 +76,7 @@ module.exports = {
     ],
     devServer: {
         compress: true,
-        host: "192.168.3.2"
+        // host: "192.168.3.2"
     }
 };
 
