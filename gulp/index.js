@@ -19,6 +19,6 @@ module.exports = class extends Generator {
 
     install() {
 
-        this.npmInstall(npmDevDeps, {'saveDev': true});
+        this.yarnInstall(npmDevDeps, {'saveDev': true});
     }
 };
