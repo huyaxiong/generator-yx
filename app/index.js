@@ -9,8 +9,6 @@ var npmDevDeps = [
     "babel-core@^6.26.0",
     "babel-loader@^7.1.5",
     "babel-preset-env@^1.7.0",
-    "babel-plugin-transform-es2015-modules-commonjs@^6.26.2",
-    "babel-plugin-syntax-dynamic-import@^6.18.0",
     "babel-plugin-root-import@^6.1.0",
     "babel-plugin-transform-runtime@^6.15.0",
     "babel-plugin-transform-object-rest-spread@^6.26.0",
@@ -65,7 +63,7 @@ module.exports = class extends Generator {
 
     install() {
 
-        this.yarnInstall(npmDeps, {'save': true});
-        this.yarnInstall(npmDevDeps, {'saveDev': true});
+        this.yarnInstall(npmDeps);
+        this.yarnInstall(npmDevDeps, {'dev': true});
     }
 };
