@@ -33,6 +33,7 @@ var npmDevDeps = [
   'eslint-plugin-import@^2.14.0',
   'eslint-plugin-node@^7.0.1',
   'eslint-plugin-promise@^4.0.1',
+  'eslint-plugin-jest@^21.22.0',
   'eslint-plugin-standard@^4.0.0'
 ]
 

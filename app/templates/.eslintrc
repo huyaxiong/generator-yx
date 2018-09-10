@@ -1,4 +1,4 @@
 {
-  "extends": ["standard"]
-//  "extends": ["plugin:vue/recommended", "standard"]
+  "extends": ["standard", "plugin:jest/recommended"]
+  //  "extends": ["plugin:vue/recommended", "standard", "plugin:jest/recommended"]
 }
