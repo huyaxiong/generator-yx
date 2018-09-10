@@ -1,9 +1,8 @@
 
 beforeAll(() => {
 
-});
+})
 
 test('two plus two equals four', () => {
-
-    expect(2+2).toBe(4);
-});
+  expect(2 + 2).toBe(4)
+})

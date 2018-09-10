@@ -1,6 +1,5 @@
 import Vue from 'vue'
 
+var ghost = new Vue()
 
-var ghost = new Vue();
-
-export default ghost;
+export default ghost

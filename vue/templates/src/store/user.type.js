@@ -1,5 +1,4 @@
-const USER_QUERY = 'USER_QUERY';
-const USER_CREATE = 'USER_CREATE';
+const USER_QUERY = 'USER_QUERY'
+const USER_CREATE = 'USER_CREATE'
 
-
-export default {USER_QUERY, USER_CREATE};
+export default { USER_QUERY, USER_CREATE }

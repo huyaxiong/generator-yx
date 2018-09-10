@@ -1,14 +1,13 @@
-let app = getAppp();
+let app = getAppp()
 
 Page({
-    data:{
+  'data': {
 
-    },
-    onLoad: function () {
+  },
+  'onLoad': function () {
 
-    },
+  },
 
-    onReady: function () {
-    }
-});
-
+  'onReady': function () {
+  }
+})

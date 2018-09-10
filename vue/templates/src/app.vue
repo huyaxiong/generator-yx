@@ -1,44 +1,37 @@
 <template>
-
-<div id="app">
+  <div id="app">
     <transition name="slide">
-        <keep-alive>
-            <router-view v-if="$route.meta.keepAlive">
-            </router-view>
-        </keep-alive>
+      <keep-alive>
+        <router-view v-if="$route.meta.keepAlive"/>
+      </keep-alive>
     </transition>
 
     <transition name="slide">
-        <router-view v-if="!$route.meta.keepAlive">
-        </router-view>
+      <router-view v-if="!$route.meta.keepAlive"/>
     </transition>
-</div>
-
+  </div>
 </template>
-
 
 <script>
 
-import router from './router';
-import store from './store';
-import FastClick from 'fastclick';
-
+import router from './router'
+import store from './store'
+import FastClick from 'fastclick'
 
 export default {
-    router,
-    store,
-    components: {
-    },
-    data() {
-        return {}
-    },
-    created() {
-        FastClick.attach(document.body);
-    }
+  router,
+  store,
+  components: {
+  },
+  data () {
+    return {}
+  },
+  created () {
+    FastClick.attach(document.body)
+  }
 }
 
 </script>
-
 
 <style lang="scss">
 

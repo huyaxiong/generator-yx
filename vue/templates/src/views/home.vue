@@ -1,41 +1,33 @@
 <template>
-
-<div id="home-view">
-</div>
-
+  <div id="home-view"/>
 </template>
-
 
 <script>
 
-import axios from 'axios';
-
-
 export default {
-    data () {
-        return {}
-    },
-    methods: {
-        query() {
+  data () {
+    return {}
+  },
+  computed: {
 
-        }
-    },
-    computed: {
+  },
+  created () {
 
-    },
-    created() {
+  },
+  mounted () {
 
-    },
-    mounted() {
+  },
+  destroyed () {
 
-    },
-    destroyed() {
+  },
+  methods: {
+    query () {
 
     }
+  }
 }
 
 </script>
-
 
 <style lang="scss" scoped>
 
