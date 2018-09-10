@@ -28,7 +28,14 @@ var npmDevDeps = [
     "webpack-bundle-analyzer@^2.13.1",
     "webpack-cli@^3.0.8",
     "clean-webpack-plugin@^0.1.19",
-    "cross-env@5.0.5"];
+    "cross-env@5.0.5",
+    "eslint@^5.5.0",
+    "eslint-config-standard@^12.0.0",
+    "eslint-plugin-import@^2.14.0",
+    "eslint-plugin-node@^7.0.1",
+    "eslint-plugin-promise@^4.0.1",
+    "eslint-plugin-standard@^4.0.0"
+];
 
 
 module.exports = class extends Generator {
