@@ -8,7 +8,7 @@ var npmDeps = [
 var npmDevDeps = [
   'vue-loader@latest',
   'vue-template-compiler@latest',
-  'eslint-plugin-vue@^5.0.0-beta.3'
+  'eslint-plugin-vue@^4.7.1'
 ]
 
 module.exports = class extends Generator {
