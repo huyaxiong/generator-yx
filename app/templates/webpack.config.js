@@ -3,20 +3,20 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 // const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin')
-// const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
+const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
 
-  'entry': {
-    'app': path.resolve(__dirname, 'src', 'main.js')
+  entry: {
+    app: path.resolve(__dirname, 'src', 'main.js')
   },
-  'output': {
-    'path': path.resolve(__dirname, 'dist'),
-    'publicPath': '/',
-    'filename': '[name].[chunkhash].js'
+  output: {
+    path: path.resolve(__dirname, 'dist'),
+    publicPath: '/',
+    filename: '[name].[chunkhash].js'
   },
-  'module': {
-    'rules': [
+  module: {
+    rules: [
       // {
       //     test: /\.vue$/,
       //     loader: 'vue-loader',
@@ -27,45 +27,45 @@ module.exports = {
       //     }
       // },
       {
-        'test': /\.js$/,
-        'loader': 'babel-loader',
-        'exclude': /node_modules/
+        test: /\.js$/,
+        loader: 'babel-loader',
+        exclude: /node_modules/
       },
       {
-        'test': /\.css$/,
-        'use': [
+        test: /\.css$/,
+        use: [
           'style-loader', 'css-loader'
         ]
       },
       {
-        'test': /\.(png|jpg|svg|ttf|woff|eot)$/,
-        'loader': 'url-loader',
-        'options': {
-          'limit': '20480'
+        test: /\.(png|jpg|svg|ttf|woff|eot)$/,
+        loader: 'url-loader',
+        options: {
+          limit: '20480'
         }
       },
       {
-        'test': /\.scss$/,
-        'use': [
+        test: /\.scss$/,
+        use: [
           'style-loader', 'css-loader', 'postcss-loader', 'sass-loader'
         ]
       }
     ]
   },
-  'resolve': {
-    'alias': {
+  resolve: {
+    alias: {
       // 'vue': 'vue/dist/vue.esm.js',
       // 'vue-router': 'vue-router/dist/vue-router.esm.js',
       // 'vuex': 'vuex/dist/vuex.esm.js',
       'axios': 'axios/dist/axios.min.js'
     }
   },
-  'devtool': 'cheap-module-eval-source-map',
-  'mode': 'development',
-  'plugins': [
+  devtool: 'cheap-module-eval-source-map',
+  mode: 'development',
+  plugins: [
     // new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
-      'template': 'index.html'
+      template: 'index.html'
     }),
     new webpack.DefinePlugin({
       'process.env': {
@@ -73,8 +73,8 @@ module.exports = {
       }
     })
   ],
-  'devServer': {
-    'compress': true
+  devServer: {
+    compress: true
     // host: "192.168.3.2"
   }
 }
@@ -87,7 +87,7 @@ if (process.env.NODE_ENV === 'test') {
     new webpack.HashedModuleIdsPlugin(),
     // new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
-      'template': 'index.html'
+      template: 'index.html'
     }),
     new webpack.DefinePlugin({
       'process.env': {
@@ -96,15 +96,15 @@ if (process.env.NODE_ENV === 'test') {
     })
   ]
   module.exports.optimization = {
-    'minimize': true,
-    'nodeEnv': 'test',
-    'runtimeChunk': 'single',
-    'splitChunks': {
-      'cacheGroups': {
-        'vendor': {
-          'test': /[\\/]node_modules[\\/](axios)/,
-          'name': 'vendors',
-          'chunks': 'all'
+    minimize: true,
+    nodeEnv: 'test',
+    runtimeChunk: 'single',
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/](axios)/,
+          name: 'vendors',
+          chunks: 'all'
         }
       }
     }
@@ -120,7 +120,7 @@ if (process.env.NODE_ENV === 'prod') {
     new webpack.HashedModuleIdsPlugin(),
     // new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
-      'template': 'index.html'
+      template: 'index.html'
     }),
     new webpack.DefinePlugin({
       'process.env': {
@@ -129,15 +129,15 @@ if (process.env.NODE_ENV === 'prod') {
     })
   ]
   module.exports.optimization = {
-    'minimize': true,
-    'nodeEnv': 'production',
-    'runtimeChunk': 'single',
-    'splitChunks': {
-      'cacheGroups': {
-        'vendor': {
-          'test': /[\\/]node_modules[\\/](axios)/,
-          'name': 'vendors',
-          'chunks': 'all'
+    minimize: true,
+    nodeEnv: 'production',
+    runtimeChunk: 'single',
+    splitChunks: {
+      cacheGroups: {
+        vendor: {
+          test: /[\\/]node_modules[\\/](axios)/,
+          name: 'vendors',
+          chunks: 'all'
         }
       }
     }

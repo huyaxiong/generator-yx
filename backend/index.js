@@ -1,42 +1,38 @@
-var Generator = require('yeoman-generator');
-var path = require('path');
+var Generator = require('yeoman-generator')
+var path = require('path')
 var npmDeps = [
-    'express@4.13.3',
-    'body-parser@1.14.2',
-    'compression@1.6.1',
-    'request@2.69.0',
-    'mongoose@4.4.4',
-    'node-uuid@1.4.7',
-    'moment@2.12.0',
-    'multer@1.1.0',
-    'morgan@1.7.0',
-    'serve-favicon@2.3.0',
-    'ip@1.1.3',
-    "express-session@1.14.1",
-    "cors@2.8.1"];
+  'express@4.13.3',
+  'body-parser@1.14.2',
+  'compression@1.6.1',
+  'request@2.69.0',
+  'mongoose@4.4.4',
+  'node-uuid@1.4.7',
+  'moment@2.12.0',
+  'multer@1.1.0',
+  'morgan@1.7.0',
+  'serve-favicon@2.3.0',
+  'ip@1.1.3',
+  'express-session@1.14.1',
+  'cors@2.8.1']
 var npmDevDeps = [
-    'babel-cli@6.14.0',
-    'babel-plugin-transform-runtime@6.15.0',
-    'babel-preset-es2017@6.14.0',
-    'babel-preset-node6@11.0.0',
-    'babel-project-relative-import@2.0.1',
-    'gulp',
-    'gulp-babel@6.1.2',
-    'mocha@2.5.3'];
-
+  'babel-cli@6.14.0',
+  'babel-plugin-transform-runtime@6.15.0',
+  'babel-preset-es2017@6.14.0',
+  'babel-preset-node6@11.0.0',
+  'babel-project-relative-import@2.0.1',
+  'gulp',
+  'gulp-babel@6.1.2',
+  'mocha@2.5.3']
 
 module.exports = class extends Generator {
+  writing () {
+    var cb = this.async()
+    this.fs.copy(path.join(__dirname, 'templates'), '.')
+    cb()
+  }
 
-    writing() {
-
-        var cb = this.async();
-        this.fs.copy(path.join(__dirname, 'templates'), '.');
-        cb();
-    }
-
-    install() {
-
-        this.yarnInstall(npmDeps);
-        this.yarnInstall(npmDevDeps, {'dev': true});
-    }
-};
+  install () {
+    this.yarnInstall(npmDeps)
+    this.yarnInstall(npmDevDeps, { 'dev': true })
+  }
+}

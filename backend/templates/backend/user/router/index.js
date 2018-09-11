@@ -1,7 +1,5 @@
-import userRouter from "./user.router"
+import userRouter from './user.router'
 
-
-export default function useUserRouters(app) {
-
-    app.use('/user', userRouter);
+export default function useUserRouters (app) {
+  app.use('/user', userRouter)
 }

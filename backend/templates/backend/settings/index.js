@@ -1,7 +1,7 @@
-import devSettings from './dev.json';
-import prodSettings from './prod.json';
+import devSettings from './dev.json'
+import prodSettings from './prod.json'
 
-let settings;
-process.env.NODE_ENV === 'prod' ? settings = prodSettings : settings = devSettings;
+let settings
+process.env.NODE_ENV === 'prod' ? settings = prodSettings : settings = devSettings
 
-export default settings;
+export default settings
