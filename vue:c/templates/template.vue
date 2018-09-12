@@ -1,7 +1,5 @@
 <template>
-
-  <div id="<%= name %>-view"/>
-
+  <div id="<%= name %>-view"></div>
 </template>
 
 <script>

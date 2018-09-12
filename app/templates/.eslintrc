@@ -1,4 +1,6 @@
 {
-  "extends": ["standard", "plugin:jest/recommended"]
-  //  "extends": ["plugin:vue/recommended", "standard", "plugin:jest/recommended"]
+  "extends": ["standard", "plugin:jest/recommended"],
+  "rules":{
+    "quote-props":["warn", "as-needed"]
+  }
 }
