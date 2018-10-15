@@ -57,7 +57,7 @@ module.exports = {
       // 'vue': 'vue/dist/vue.esm.js',
       // 'vue-router': 'vue-router/dist/vue-router.esm.js',
       // 'vuex': 'vuex/dist/vuex.esm.js',
-      'axios': 'axios/dist/axios.min.js'
+      // 'axios': 'axios/dist/axios.min.js'
     }
   },
   devtool: 'cheap-module-eval-source-map',
@@ -74,8 +74,8 @@ module.exports = {
     })
   ],
   devServer: {
+    host: '0.0.0.0',
     compress: true
-    // host: "192.168.3.2"
   }
 }
 
