@@ -13,6 +13,7 @@
 
 @mixin flex-center__vertical() {
   display: flex;
+  flex-direction: column;
   align-items:center;
 }
 
