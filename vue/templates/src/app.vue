@@ -17,6 +17,7 @@
 import router from './router'
 import store from './store'
 import FastClick from 'fastclick'
+import { init } from './common/config'
 
 export default {
   router,
@@ -28,6 +29,7 @@ export default {
   },
   created () {
     FastClick.attach(document.body)
+    init()
   }
 }
 
