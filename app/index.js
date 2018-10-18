@@ -34,7 +34,10 @@ var npmDevDeps = [
   'eslint-plugin-node@^7.0.1',
   'eslint-plugin-promise@^4.0.1',
   'eslint-plugin-jest@^21.22.0',
-  'eslint-plugin-standard@^4.0.0'
+  'eslint-plugin-standard@^4.0.0',
+  'stylelint@^9.6.0',
+  'stylelint-config-recommended-scss@^3.2.0',
+  'stylelint-scss@^3.3.1'
 ]
 
 module.exports = class extends Generator {
