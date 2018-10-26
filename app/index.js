@@ -37,7 +37,8 @@ var npmDevDeps = [
   'eslint-plugin-standard@^4.0.0',
   'stylelint@^9.6.0',
   'stylelint-config-recommended-scss@^3.2.0',
-  'stylelint-scss@^3.3.1'
+  'stylelint-scss@^3.3.1',
+  'husky@^1.1.2'
 ]
 
 module.exports = class extends Generator {
@@ -54,6 +55,7 @@ module.exports = class extends Generator {
       'description': '',
       'main': 'server/main.js',
       'scripts': {
+        'lint': './node_modules/.bin/eslint src/**/*.vue src/**/*.js --fix && ./node_modules/.bin/stylelint src/**/*.scss --fix',
         'watch': "cross-env NODE_ENV=dev ./node_modules/.bin/webpack-dev-server -w --open-page './index.html'",
         'build:test': 'cross-env NODE_ENV=test ./node_modules/.bin/webpack --progress',
         'build:prod': 'cross-env NODE_ENV=prod ./node_modules/.bin/webpack --progress',
