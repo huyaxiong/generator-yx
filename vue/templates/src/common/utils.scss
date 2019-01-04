@@ -1,0 +1,40 @@
+@mixin absolute-center($w, $h) {
+  position: absolute;
+  left: 50%;
+  top:50%;
+  transform: translate(-$w/2, -$h/2);
+}
+
+@mixin absolute-center__horizontal($w) {
+  position: absolute;
+  left: 50%;
+  transform: translate(-$w/2, 0);
+}
+
+@mixin flex-center__vertical() {
+  display: flex;
+  flex-direction: column;
+  align-items:center;
+}
+
+@mixin flex-center{
+  display: flex;
+  align-items:center;
+  justify-content: center;
+}
+
+@mixin overlay {
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  overflow: hidden;
+}
+
+@mixin ellipsis {
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+}

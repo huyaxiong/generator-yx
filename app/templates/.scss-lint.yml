@@ -1,0 +1,7 @@
+scss_files: 'src/components/**/*.scss'
+
+linters:
+  IdSelector:
+    enabled: false
+  SelectorFormat:
+    convention: hyphenated_BEM
