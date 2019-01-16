@@ -19,7 +19,16 @@ const routes = [
   }
 ]
 
-let router = new VueRouter({ routes })
+let router = new VueRouter({
+  routes,
+  scrollBehavior (to, from, savedPosition) {
+    if (savedPosition) {
+      return savedPosition
+    } else {
+      return { x: 0, y: 0 }
+    }
+  }
+})
 
 router.beforeEach((to, from, next) => {
   if (to.meta && to.meta.title) {

@@ -1,6 +1,6 @@
 {
   "name": "generator-yx",
-  "version": "2.0.9",
+  "version": "2.1.0",
   "description": "Full stack javascript project scaffold.",
   "main": "app/index.js",
   "dependencies": {
@@ -34,8 +34,7 @@
     "gulp",
     "mini-program",
     "vue:c",
-    "vue:m",
-    "vue"
+    "vue:m"
   ],
   "author": "huyaxiong",
   "license": "ISC",

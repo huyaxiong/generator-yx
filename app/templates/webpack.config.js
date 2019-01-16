@@ -1,6 +1,7 @@
 const path = require('path')
 const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
@@ -16,6 +17,15 @@ module.exports = {
   },
   module: {
     rules: [
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: {
+          loaders: {
+            scss: 'style-loader!css-loader!postcss-loader!resolve-url-loader!sass-loader?sourceMap'
+          }
+        }
+      },
       {
         test: /\.js$/,
         loader: 'babel-loader',
@@ -44,12 +54,16 @@ module.exports = {
   },
   resolve: {
     alias: {
+      'vue': 'vue/dist/vue.esm.js',
+      'vue-router': 'vue-router/dist/vue-router.esm.js',
+      'vuex': 'vuex/dist/vuex.esm.js',
+      'axios': 'axios/dist/axios.min.js'
     }
   },
   devtool: 'cheap-module-eval-source-map',
   mode: 'development',
   plugins: [
-    // new VueLoaderPlugin(),
+    new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       template: 'index.html'
     }),
@@ -71,7 +85,7 @@ if (process.env.NODE_ENV === 'test') {
   module.exports.plugins = [
     new CleanWebpackPlugin([path.resolve(__dirname, 'dist')]),
     new webpack.HashedModuleIdsPlugin(),
-    // new VueLoaderPlugin(),
+    new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       template: 'index.html'
     }),
@@ -88,7 +102,7 @@ if (process.env.NODE_ENV === 'test') {
     splitChunks: {
       cacheGroups: {
         vendor: {
-          test: /[\\/]node_modules[\\/]/,
+          test: /[\\/]node_modules[\\/](axios|vue|fastclick)/,
           name: 'vendors',
           chunks: 'all'
         }
@@ -104,7 +118,7 @@ if (process.env.NODE_ENV === 'prod') {
   module.exports.plugins = [
     new CleanWebpackPlugin([path.resolve(__dirname, 'dist')]),
     new webpack.HashedModuleIdsPlugin(),
-    // new VueLoaderPlugin(),
+    new VueLoaderPlugin(),
     new HtmlWebpackPlugin({
       template: 'index.html'
     }),
@@ -121,7 +135,7 @@ if (process.env.NODE_ENV === 'prod') {
     splitChunks: {
       cacheGroups: {
         vendor: {
-          test: /[\\/]node_modules[\\/]/,
+          test: /[\\/]node_modules[\\/](axios|vue)/,
           name: 'vendors',
           chunks: 'all'
         }

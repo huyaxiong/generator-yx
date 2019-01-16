@@ -24,9 +24,6 @@ export default {
   store,
   components: {
   },
-  data () {
-    return {}
-  },
   created () {
     FastClick.attach(document.body)
     init()
