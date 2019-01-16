@@ -23,9 +23,12 @@ export default {
 
   },
   methods: {
-    query () {
+    init () {
 
     }
+  },
+  beforeRouteEnter (to, from, next) {
+    next(vm => vm.init(to.query))
   }
 }
 
