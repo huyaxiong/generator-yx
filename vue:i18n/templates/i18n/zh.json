@@ -1,0 +1,25 @@
+{
+  "menu": {
+  },
+  "common": {
+    "search": "搜索",
+    "save": "保存",
+    "cancel": "取消",
+    "delete": "删除",
+    "status": "状态",
+    "create_time": "创建时间",
+    "email": "电子邮箱",
+    "query": "查询",
+    "all": "全部",
+    "submit": "提交",
+    "view": "查看",
+    "edit": "编辑",
+    "mobile_no": "手机号",
+    "yuan": "元",
+    "point": "积分",
+    "to": "到",
+    "day": "天",
+    "tips":"小贴士",
+    "colon":"："
+  }
+}

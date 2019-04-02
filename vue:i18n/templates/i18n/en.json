@@ -1,0 +1,25 @@
+{
+  "menu": {
+  },
+  "common": {
+    "search": "Search",
+    "save": "Save",
+    "cancel": "Cancel",
+    "delete": "Delete",
+    "status": "Status",
+    "create_time": "Create Time",
+    "email": "Email",
+    "query": "Query",
+    "all": "All",
+    "submit": "Submit",
+    "view": "View",
+    "edit": "Edit",
+    "mobile_no": "Mobile",
+    "yuan": "CNY",
+    "point": "Point",
+    "to": "To",
+    "day": "Day",
+    "tips":"Tips",
+    "colon":":"
+  }
+}
