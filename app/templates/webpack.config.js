@@ -3,6 +3,7 @@ const webpack = require('webpack')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin')
 const CleanWebpackPlugin = require('clean-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin')
 // const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin
 
 module.exports = {
@@ -88,7 +89,11 @@ if (process.env.NODE_ENV === 'test') {
       'process.env': {
         'BASE_URL': JSON.stringify('')
       }
-    })
+    }),
+    // new CopyWebpackPlugin([{
+    //   from: path.join(__dirname, 'favicon.ico'),
+    //   to: path.join(__dirname, 'dist', 'favicon.ico')
+    // }])
   ]
   module.exports.optimization = {
     minimize: true,
@@ -121,7 +126,11 @@ if (process.env.NODE_ENV === 'prod') {
       'process.env': {
         'BASE_URL': JSON.stringify('')
       }
-    })
+    }),
+    // new CopyWebpackPlugin([{
+    //   from: path.join(__dirname, 'favicon.ico'),
+    //   to: path.join(__dirname, 'dist', 'favicon.ico')
+    // }])
   ]
   module.exports.optimization = {
     minimize: true,
