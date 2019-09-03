@@ -19,12 +19,7 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        loader: 'vue-loader',
-        options: {
-          loaders: {
-            scss: 'style-loader!css-loader!postcss-loader!resolve-url-loader!sass-loader?sourceMap'
-          }
-        }
+        loader: 'vue-loader'
       },
       {
         test: /\.js$/,
@@ -38,7 +33,7 @@ module.exports = {
         ]
       },
       {
-        test: /\.(png|jpg|svg|ttf|woff|eot)$/,
+        test: /\.(png|jpg|svg|ttf|woff|woff2|eot|gif)$/,
         loader: 'url-loader',
         options: {
           limit: '20480'
@@ -47,7 +42,7 @@ module.exports = {
       {
         test: /\.scss$/,
         use: [
-          'style-loader', 'css-loader', 'postcss-loader', 'resolve-url-loader', 'sass-loader?sourceMap'
+          'vue-style-loader', 'css-loader', 'postcss-loader', 'sass-loader'
         ]
       }
     ]

@@ -26,6 +26,9 @@ export default {
   },
   created () {
     FastClick.attach(document.body)
+    FastClick.prototype.focus = (ele) => {
+      ele.focus()
+    }
     init()
   }
 }
